@@ -1,0 +1,12 @@
+{# Tarjeta de proyecto. p = dict con title, text, tags, facts, image (html) , href, cta, main #}
+<article class="project{% if p.main %} project-main{% endif %}{% if p.pending %} project-pending{% endif %}">
+  {% if p.image %}<div class="shot">{{ p.image|safe }}</div>{% endif %}
+  <div class="project-body">
+    <ul class="tags" role="list">{% for tag in p.tags %}<li class="chip{% if loop.index > 1 %} chip-plain{% endif %}">{{ tag }}</li>{% endfor %}</ul>
+    <h3>{% if p.pending %}{{ p.title }}{% else %}<a href="{{ p.href }}">{{ p.title }}</a>{% endif %}</h3>
+    <p>{{ p.text }}</p>
+    {% if p.facts %}<ul class="facts-inline">{% for f in p.facts %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+    {% if p.pending %}<p class="links"><a class="more" href="{{ p.href }}" rel="noopener">{{ p.cta }}</a></p>
+    {% else %}<p><span class="more" style="color:var(--color-accent)">{{ p.cta }}</span></p>{% endif %}
+  </div>
+</article>

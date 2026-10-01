@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ t.cv_h }}</h1>
+    <p class="summary">{{ t.cv_p }}</p>
+  </header>
+  <div class="cv-grid" style="padding-bottom:var(--space-section)">
+    {% for name, file, code in t.cv_cards %}
+    <section class="cv-card" lang="{{ code }}" aria-labelledby="cv-{{ code }}">
+      <h2 id="cv-{{ code }}" style="font-size:var(--text-xl)">{{ name }}</h2>
+      <p>PDF · 2 {{ 'páginas' if code == 'es' else 'pages' }}</p>
+      <p><a class="btn" href="/cv/{{ file }}" download>{{ 'Descargar PDF' if code == 'es' else 'Download PDF' }}<span class="visually-hidden"> ({{ name }})</span></a></p>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="color-scheme" content="light dark">
+{% for code, url in alternates %}<link rel="alternate" hreflang="{{ code }}" href="{{ url }}">
+{% endfor %}<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:locale" content="{{ 'es_MX' if lang == 'es' else 'en_US' }}">
+<link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip" href="#main">{{ t.skip }}</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ href('home') }}">Alonso Cantú</a>
+    <nav class="nav" aria-label="{{ t.nav_label }}">
+      <a href="{{ href('projects') }}"{% if section == 'projects' %} aria-current="page"{% endif %}>{{ t.nav_projects }}</a>
+      <a href="{{ href('about') }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ t.nav_about }}</a>
+      <a href="{{ href('cv') }}"{% if section == 'cv' %} aria-current="page"{% endif %}>{{ t.nav_cv }}</a>
+      <a class="lang" href="{{ alt_href }}" lang="{{ t.lang_code }}" hreflang="{{ t.lang_code }}" aria-label="{{ t.lang_aria }}">{{ t.lang_name }}</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="footer-links">
+      <li><a href="mailto:{{ email }}">{{ email }}</a></li>
+      <li><a href="{{ linkedin }}" rel="noopener">LinkedIn</a></li>
+      <li><a href="{{ behance }}" rel="noopener">Behance</a></li>
+    </ul>
+    <p>{{ t.footer_note }}</p>
+    <p>{{ t.footer_rights }}</p>
+  </div>
+</footer>
+</body>
+</html>

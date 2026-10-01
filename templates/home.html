@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block head %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endblock %}
+{% block main %}
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h-hero">Alonso Cantú</h1>
+      <p class="role">{{ t.hero_role }}</p>
+      <p class="lede">{{ t.hero_lede }}</p>
+      <p class="avail">{{ t.hero_avail }}</p>
+      <div class="actions">
+        <a class="btn" href="{{ href('with-you') }}">{{ t.hero_cta1 }}</a>
+        <a class="btn btn-ghost" href="{{ href('cv') }}">{{ t.hero_cta2 }}</a>
+      </div>
+    </div>
+    <figure>
+      <span class="dim" aria-hidden="true"><span>{{ t.hero_dim }}</span></span>
+      <div class="shot">{{ hero_img|safe }}</div>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="h-work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-work">{{ t.work_h }}</h2>
+      <p>{{ t.work_p }}</p>
+    </div>
+    <div class="work">
+      {% with p = projects[0] %}{% include "_project.html" %}{% endwith %}
+      <div class="work-pair">
+        {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
+        {% with p = projects[2] %}{% include "_project.html" %}{% endwith %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-how">{{ t.how_h }}</h2>
+      <p>{{ t.how_p }}</p>
+    </div>
+    <ol class="steps">
+      {% for title, text, key in t.how %}
+      <li><div><h3>{{ title }}</h3><p>{{ text }}</p><p><a href="{{ href('with-you') }}#{{ anchors[key] }}">{{ t.how_link }}</a></p></div></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="h-about">
+  <div class="wrap split">
+    <h2 id="h-about">{{ t.about_short_h }}</h2>
+    <div>
+      {% for para in t.about_short %}<p>{{ para }}</p>{% endfor %}
+      <p><a href="{{ href('about') }}">{{ t.about_more }}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="h-contact">
+  <div class="wrap split">
+    <h2 id="h-contact">{{ t.contact_h }}</h2>
+    <div>
+      <p>{{ t.contact_p }}</p>
+      <ul class="contact-list" style="margin-top:var(--space-5)">
+        <li><a href="mailto:{{ email }}">{{ email }}</a></li>
+        <li><a href="{{ linkedin }}" rel="noopener">{{ t.contact_linkedin }}</a></li>
+        <li><a href="{{ behance }}" rel="noopener">{{ t.contact_behance }}</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

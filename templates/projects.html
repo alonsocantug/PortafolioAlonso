@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ t.projects_h }}</h1>
+    <p class="summary">{{ t.projects_p }}</p>
+  </header>
+  <div class="work" style="padding-bottom:var(--space-section)">
+    {% with p = projects[0] %}{% include "_project.html" %}{% endwith %}
+    <div class="work-pair">
+      {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
+      {% with p = projects[2] %}{% include "_project.html" %}{% endwith %}
+    </div>
+  </div>
+</div>
+{% endblock %}

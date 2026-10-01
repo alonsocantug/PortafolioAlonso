@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ t.about_h }}</h1>
+    <p class="summary">{{ t.about_lead }}</p>
+  </header>
+  <div class="about-grid" style="padding-bottom:var(--space-section)">
+    <div class="prose">{% for para in t.about_body %}<p>{{ para }}</p>{% endfor %}</div>
+    <section aria-labelledby="h-path">
+      <h2 id="h-path" style="margin-bottom:var(--space-5)">{{ t.path_h }}</h2>
+      <ul class="timeline" role="list">
+        {% for when, role, org, text in t.path %}
+        <li><p class="when">{{ when }}</p><div><h3>{{ role }}</h3><p>{{ org }}. {{ text }}</p></div></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="split" aria-labelledby="h-edu">
+      <div><h2 id="h-edu">{{ t.edu_h }}</h2></div>
+      <ul class="plain-list" role="list">{% for e in t.edu %}<li>{{ e }}</li>{% endfor %}</ul>
+    </section>
+    <section class="split" aria-labelledby="h-tools">
+      <div><h2 id="h-tools">{{ t.tools_h }}</h2></div>
+      <ul class="plain-list" role="list">{% for e in t.tools %}<li>{{ e }}</li>{% endfor %}</ul>
+    </section>
+    <section class="split" aria-labelledby="h-contact">
+      <div><h2 id="h-contact">{{ t.contact_h }}</h2></div>
+      <div>
+        <p>{{ t.contact_p }}</p>
+        <ul class="contact-list" style="margin-top:var(--space-4)">
+          <li><a href="mailto:{{ email }}">{{ email }}</a></li>
+          <li><a href="{{ linkedin }}" rel="noopener">{{ t.contact_linkedin }}</a></li>
+          <li><a href="{{ behance }}" rel="noopener">{{ t.contact_behance }}</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="{{ href('projects') }}">{{ t.case_back }}</a></p>
+    <ul class="tags" role="list">{% for tag in meta.tags %}<li class="chip{% if loop.index > 1 %} chip-plain{% endif %}">{{ tag }}</li>{% endfor %}</ul>
+    <h1>{{ meta.title }}</h1>
+    <p class="summary">{{ meta.summary }}</p>
+    {% if meta.prototype %}<p class="actions"><a class="btn" href="{{ meta.prototype }}" rel="noopener">{{ t.case_proto }}</a></p>{% endif %}
+    <dl class="facts">
+      {% for k, v in meta.facts %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}
+    </dl>
+    <p class="note"><strong>{{ meta.note_label }}</strong> {{ meta.note }}</p>
+  </header>
+  <div class="case">
+    <nav class="case-nav" aria-label="{{ t.case_in_page }}">
+      <strong>{{ t.case_in_page }}</strong>
+      <ol>{% for id, text in toc %}<li><a href="#{{ id }}">{{ text }}</a></li>{% endfor %}</ol>
+    </nav>
+    <div class="prose">{{ body|safe }}</div>
+  </div>
+</article>
+{% endblock %}
