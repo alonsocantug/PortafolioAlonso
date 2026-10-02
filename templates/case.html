@@ -12,6 +12,21 @@
     </dl>
     <p class="note"><strong>{{ meta.note_label }}</strong> {{ meta.note }}</p>
   </header>
+  {% if hero %}<figure class="case-hero"><div class="shot bare">{{ hero|safe }}</div></figure>{% endif %}
+  {% if embed %}
+  <section class="proto" aria-labelledby="proto-title">
+    <div class="proto-copy">
+      <h2 id="proto-title">{{ t.embed_title }}</h2>
+      <p>{{ t.embed_text }}</p>
+      <p class="actions"><button class="btn" type="button" id="proto-load">{{ t.embed_btn }}</button> <a class="btn btn-ghost" href="{{ meta.prototype }}" rel="noopener">{{ t.case_proto }}</a></p>
+    </div>
+    <div class="proto-phone" id="proto-phone" data-src="{{ embed }}" data-label="{{ t.embed_label }}"><div class="proto-screen" id="proto-screen"></div></div>
+  </section>
+  <script>
+  (function(){var b=document.getElementById('proto-load'),p=document.getElementById('proto-phone'),s=document.getElementById('proto-screen');if(!b)return;
+  b.addEventListener('click',function(){if(s.firstChild)return;var f=document.createElement('iframe');f.src=p.dataset.src;f.title=p.dataset.label;f.allowFullscreen=true;s.appendChild(f);b.textContent='\u2713';b.disabled=true;});})();
+  </script>
+  {% endif %}
   <div class="case">
     <nav class="case-nav" aria-label="{{ t.case_in_page }}">
       <strong>{{ t.case_in_page }}</strong>
