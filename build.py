@@ -116,10 +116,10 @@ def projects_for(lang):
     t = D.UI[lang]
     return [
         dict(title=t["p_wy_title"], text=t["p_wy_text"], tags=t["p_wy_tags"], facts=t["p_wy_facts"], main=True,
-             image=picture("wy-hifi", t["p_wy_alt"], sizes="(min-width: 48em) 55vw, 100vw"),
+             image=picture("wy-card", t["p_wy_alt"], sizes="(min-width: 48em) 55vw, 100vw"),
              href=path_of(lang, "with-you"), cta=t["read_case"]),
         dict(title=t["p_fi_title"], text=t["p_fi_text"], tags=t["p_fi_tags"], facts=t["p_fi_facts"],
-             image=picture("fi-hero", t["p_fi_alt"], sizes="(min-width: 48em) 50vw, 100vw"),
+             image=picture("fi-card", t["p_fi_alt"], sizes="(min-width: 48em) 50vw, 100vw"),
              href=path_of(lang, "firmia"), cta=t["read_case"]),
         dict(title=t["p_ds_title"], text=t["p_ds_text"], tags=t["p_ds_tags"], pending=True,
              href=D.BEHANCE, cta=t["see_behance"]),
@@ -140,11 +140,15 @@ def main():
             "sameAs": [D.LINKEDIN, D.BEHANCE], "knowsLanguage": ["es", "en"],
         }, ensure_ascii=False)
         render(lang, "home", "home.html", "home", t["home_title"], t["home_desc"], projects=projs, jsonld=jsonld,
-               hero_img=picture("wy-hifi", t["hero_alt"], sizes="(min-width: 64em) 45vw, 100vw", eager=True))
+               hero_img=picture("wy-hero", t["hero_alt"], sizes="(min-width: 64em) 45vw, 100vw", eager=True))
         render(lang, "projects", "projects.html", "projects", t["projects_title"], t["projects_desc"], projects=projs)
         for key in ("with-you", "firmia"):
             meta, body, toc = load_case(lang, key)
-            render(lang, key, "case.html", "projects", meta["page_title"], meta["description"], meta=meta, body=body, toc=toc)
+            hero = picture(meta["hero"], meta["hero_alt"], sizes="(min-width: 70rem) 1120px, 100vw", eager=True) if meta.get("hero") else None
+            embed = None
+            if meta.get("embed") and meta.get("prototype"):
+                embed = meta["prototype"].replace("://www.figma.com/proto/", "://embed.figma.com/proto/") + "&embed-host=share&hide-ui=1"
+            render(lang, key, "case.html", "projects", meta["page_title"], meta["description"], meta=meta, body=body, toc=toc, hero=hero, embed=embed)
         render(lang, "about", "about.html", "about", t["about_title"], t["about_desc"])
         render(lang, "cv", "cv.html", "cv", t["cv_title"], t["cv_desc"])
 
