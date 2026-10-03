@@ -10,10 +10,13 @@ facts:
   - ["Herramientas", "Figma, FigJam, Maze"]
   - ["Investigación", "Revisión bibliográfica y 2 entrevistas simuladas; 2 personas ficticias"]
   - ["Pruebas", "3 usuarios simulados en Maze, 3 tareas"]
-  - ["Sistema de diseño", "UI Kit v1.0 y auditoría v1.1 con variables y 11 componentes"]
+  - ["Sistema de diseño", "UI Kit de 44 componentes y Design System v1.1 con 48 variables, aplicados a las pantallas"]
 note_label: Nota sobre el método.
 note: Es un ejercicio de práctica sin cliente real. Las entrevistas, las personas (Sofía y Diego) y las pruebas de usabilidad en Maze se simularon para recorrer el proceso completo, por lo que sus resultados ilustran el método y no tienen valor estadístico. Las fotografías de las personas son ilustrativas. La interfaz, el prototipo y el sistema de diseño son trabajo real y se pueden revisar en Figma.
-prototype: "https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8457-3245&p=f&t=DD39fRHHVm9bnTrB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8457%3A3232"
+hero: wy-case
+hero_alt: "Cinco pantallas de With You en teléfonos: bienvenida, inicio, respiración guiada, registro de ánimo y progreso"
+embed: true
+prototype: "https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&p=f&t=kgGgzBfNxlV73m9J-1&scaling=scale-down&content-scaling=fixed&page-id=194%3A839&starting-point-node-id=8735%3A3732"
 ---
 
 ## Problema y objetivo
@@ -96,7 +99,7 @@ Para cada persona armé un journey map que me mostró dónde se pierde la calma 
 
 ![Pantallas de alta fidelidad: Inicio, Ejercicios y Mi progreso](img:wy-hifi)
 
-**Prototipo.** [Ábrelo en Figma](https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8457-3245&p=f&t=DD39fRHHVm9bnTrB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8457%3A3232) y recorre el flujo de respiración guiada.
+**Prototipo.** [Ábrelo en Figma](https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&p=f&t=kgGgzBfNxlV73m9J-1&scaling=scale-down&content-scaling=fixed&page-id=194%3A839&starting-point-node-id=8735%3A3732) y recorre el flujo de respiración guiada.
 
 ## Prueba de usabilidad simulada
 
@@ -125,24 +128,42 @@ El hallazgo sobre el ícono elegido quedó sin resolver en esta versión; lo ret
 
 ![UI Kit v1.0: colores de acento Primary, Ansiedad, Estrés, Sueño y Concentración con sus códigos hexadecimales](img:wy-uikit)
 
-**v1.1, auditoría posterior (septiembre de 2026).** Medí el contraste con WCAG 2.2 AA y encontré fallas que no vi al diseñar. Reconstruí el kit en [un archivo nuevo de Figma](https://www.figma.com/design/GHPCtHubSztEL1khHyVq3t) con cuatro colecciones de variables, nueve estilos de texto, dos sombras y 11 componentes con estados (foco, presionado, deshabilitado). No se probó con usuarios.
+**v1.1, auditoría posterior (septiembre de 2026).** Medí el contraste con WCAG 2.2 AA y encontré fallas que no vi al diseñar. Reconstruí el kit en [un archivo aparte de Figma](https://www.figma.com/design/GHPCtHubSztEL1khHyVq3t) con cuatro colecciones de variables, nueve estilos de texto, dos sombras y 11 componentes con estados (foco, presionado, deshabilitado). No se probó con usuarios.
 
-| Elemento | v1.0 | v1.1 |
+**Aplicado a las pantallas (octubre de 2026).** Al llevar las pantallas a Hi-Fi v2 junté todo en el archivo del proyecto. El UI Kit creció a 44 componentes (70 contando sus variantes) en seis secciones, y la v1.1 pasó a una página "Design System" con 48 variables en cuatro colecciones. Corregí los colores en los estilos del UI Kit y en las variables del Design System con los mismos valores, así que las pantallas, el kit y el sistema coinciden. Estos son los cambios que medí sobre las pantallas:
+
+| Elemento | Antes | Ahora |
 |---|---|---|
-| Texto de “Respira ahora” | Blanco sobre degradado, 1.82 a 2.91:1 | Texto #083028, 4.93 a 7.88:1 |
-| Badges de categoría | 2.33 a 3.55:1 | Colores de texto seguro, 4.76 a 6.34:1 |
-| Pestaña activa | Azul #007AFF, 4.02:1 | #0369A1 con indicador superior, 5.93:1 |
-| Ánimo seleccionado | Blanco sobre azul claro, 2.77 a 4.10:1 | #0369A1 con marca ✓, 5.93:1 |
-| Texto secundario | Negro al 30 a 50%, 2.09 a 3.92:1 | #5F6472, 5.56:1 |
-| Botones pequeños | 30 y 36 px | 44 px |
-| Texto mínimo | 9 y 10 px | 11 y 12 px |
+| Botones, enlaces y pestaña activa | Blanco sobre #0EA5E9, 2.77:1 | #0369A1, 5.93:1 |
+| Texto secundario | #717182, 4.51 a 4.79:1 | #5F6472, 5.56 a 5.91:1 |
+| Botón de colgar | Blanco sobre #EF4444, 3.76:1 | #DC2626, 4.83:1 |
+| Números del calendario sobre verde y naranja | Blanco, 2.54 y 2.80:1 | #111111, 7.44 y 6.74:1 |
+| Cifras de progreso (12 y 5) | #10B981 y #F97316 sobre blanco, 2.54 y 2.80:1 | #047857 y #C2410C, 5.48 y 5.18:1 |
+
+![Design System del proyecto: variables de color de texto, superficie, borde, acción, categorías, calma y pestañas, con sus códigos corregidos](img:wy-ds-color)
+
+Otras correcciones de la v1.1 viven en los componentes del Design System y todavía no están en las pantallas: badges con colores de texto seguros (4.76 a 6.34:1), botones pequeños de 44 px, marca ✓ en el ánimo seleccionado y estados de foco, presionado y deshabilitado. La versión anterior de "Respira ahora" tenía 1.82 a 2.91:1 con texto blanco sobre degradado; en Hi-Fi v2 la sustituí por un hero con foto. Medí el texto blanco sobre la foto: el título y el subtítulo dan 7.15:1 o más en el peor punto, y a la etiqueta "Recomendado" le oscurecí el fondo porque bajaba a 3.52:1 en los reflejos claros y ahora da 11.12:1 como mínimo.
+
+**UI Kit ampliado en el archivo del proyecto.** Tiene 15 estilos de color, 21 estilos de texto, dos sombras y cuatro radios (10, 14, 18 y 20 px). Sus seis secciones son navegación y encabezados, botones y formularios, tarjetas, listas y calendario, estado de ánimo, e iconos y respiración. Los componentes están vinculados a las pantallas del prototipo, como la tarjeta de ejercicio con miniatura, el hero de respiración con foto, el selector de ánimo y la fila de lista.
+
+![Fundamentos del UI Kit: 15 estilos de color, estilos de texto en Poppins e Inter, dos sombras y cuatro radios](img:wy-kit-fund)
+
+![Componentes de tarjetas: ejercicio, recomendados, ánimo promedio, progreso, objetivo, gráfica semanal, contenedor, miniatura y hero de respiración](img:wy-kit-cards)
+
+![Componentes de estado de ánimo: emojis, mood tiles con estado seleccionado y selectores](img:wy-kit-mood)
+
+![Componentes de botones y formularios: botón principal con estados, secundario y de peligro, interruptor, campo de texto y notas](img:wy-kit-forms)
+
+![Componentes de navegación: barra superior, logo, pestaña, tab bar y menú de perfil](img:wy-kit-nav)
+
+![Filas de lista y días de calendario con estado de ánimo, más ícono de cerebro, botón de pausa y play, avatar y emojis mini](img:wy-kit-lists)
 
 ## Aprendizajes y qué haría distinto
 
 Diseñar With You me dejó cuatro aprendizajes y una lista clara de lo que haría distinto.
 
 - **Diseñé bien el proceso, pero me faltó hablar con personas reales.** Practiqué cada etapa con entrevistas y pruebas simuladas y eso me enseñó a estructurar preguntas, sintetizar y convertir un hallazgo en un cambio. La siguiente vez haría una ronda real con unas 5 personas que vivan ansiedad, con guión, consentimiento y una plantilla de análisis, y compararía qué cambia frente a lo que yo había supuesto.
-- **Auditar mi propio trabajo encontró lo que yo no vi.** "Respira ahora" tenía un contraste de 1.82 a 2.91:1 con texto blanco, muy por debajo del 4.5:1 de WCAG AA, aunque yo había puesto "accesible" como principio. Lo corregí a 4.93–7.88:1. Ahora mido el contraste en el momento en que elijo un color, no al final.
-- **El color y el emoji no bastan.** El selector de ánimo dependía de ellos; agregué una marca ✓ al estado elegido y objetivos táctiles de 44 px, porque una persona en un momento de ansiedad necesita saber sin dudar qué eligió.
-- **Un sistema de diseño sin variables no escala.** La v1.0 tenía los colores pintados a mano. La v1.1 tiene 4 colecciones de variables, 9 estilos de texto y 11 componentes con estados, y cada decisión de contraste queda documentada.
-- **Lo que aún me falta.** Probar la v1.1 con usuarios reales y reemplazar los iconos provisionales.
+- **Auditar mi propio trabajo encontró lo que yo no vi.** "Respira ahora" tenía un contraste de 1.82 a 2.91:1 con texto blanco, muy por debajo del 4.5:1 de WCAG AA, aunque yo había puesto "accesible" como principio. La v1.1 lo corrigió a 4.93–7.88:1 y, ya en las pantallas finales, el azul principal pasó de 2.77 a 5.93:1. Ahora mido el contraste en el momento en que elijo un color, no al final.
+- **El color y el emoji no bastan.** El selector de ánimo dependía de ellos; en el Design System agregué una marca ✓ al estado elegido y objetivos táctiles de 44 px, porque una persona en un momento de ansiedad necesita saber sin dudar qué eligió.
+- **Un sistema de diseño sin variables no escala.** La v1.0 tenía los colores pintados a mano. El Design System del proyecto tiene 48 variables en 4 colecciones, 21 estilos de texto compartidos con el kit y 11 secciones de componentes con estados, y cada decisión de contraste queda documentada.
+- **Lo que aún me falta.** Probar los colores corregidos con usuarios reales, llevar a las pantallas la marca ✓ y los objetivos de 44 px, reemplazar los iconos provisionales.

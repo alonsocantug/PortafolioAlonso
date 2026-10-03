@@ -11,6 +11,8 @@ facts:
   - ["Fuera de alcance", "Investigación con usuarios y pruebas de usabilidad"]
 note_label: Nota sobre el método.
 note: Es un ejercicio de diseño de interfaz sobre un concepto, sin cliente real ni investigación con usuarios. Las cifras de la landing (90%, 0 y 24/7), el folio, los montos y los datos de contacto son de ejemplo y no son resultados medidos.
+hero: fi-case
+hero_alt: "Cuatro pantallas móviles de Firmia: mis presupuestos, resumen, firma de conformidad y confirmación"
 prototype: "https://www.figma.com/proto/QuFyeK4A08L6gaJjd4IzQT/Firmia-UX-UI?node-id=31-247&p=f&scaling=scale-down&content-scaling=fixed&page-id=29%3A212&starting-point-node-id=31%3A247&show-proto-sidebar=1"
 ---
 

@@ -11,6 +11,8 @@ facts:
   - ["Out of scope", "User research and usability testing"]
 note_label: Note on method.
 note: This is an interface design exercise on a concept, with no real client and no user research. The landing page figures (90%, 0 and 24/7), the quote number, the amounts and the contact details are examples, not measured results.
+hero: fi-case
+hero_alt: "Four Firmia mobile screens: my quotes, summary, sign-off and confirmation"
 prototype: "https://www.figma.com/proto/QuFyeK4A08L6gaJjd4IzQT/Firmia-UX-UI?node-id=31-247&p=f&scaling=scale-down&content-scaling=fixed&page-id=29%3A212&starting-point-node-id=31%3A247&show-proto-sidebar=1"
 ---
 

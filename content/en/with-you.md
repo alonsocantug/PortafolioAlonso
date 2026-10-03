@@ -10,10 +10,13 @@ facts:
   - ["Tools", "Figma, FigJam, Maze"]
   - ["Research", "Literature review and 2 simulated interviews; 2 fictional personas"]
   - ["Testing", "3 simulated users in Maze, 3 tasks"]
-  - ["Design system", "UI Kit v1.0 and v1.1 audit with variables and 11 components"]
+  - ["Design system", "44-component UI Kit and v1.1 Design System with 48 variables, applied to the screens"]
 note_label: Note on method.
 note: This is a practice exercise with no real client. The interviews, the personas (Sofía and Diego) and the Maze usability tests were simulated to walk through the full process, so their results illustrate the method and have no statistical value. The photographs of the people are illustrative. The interface, the prototype and the design system are real work and can be reviewed in Figma.
-prototype: "https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8457-3245&p=f&t=DD39fRHHVm9bnTrB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8457%3A3232"
+hero: wy-case
+hero_alt: "Five With You screens on phones: welcome, home, guided breathing, mood log and progress"
+embed: true
+prototype: "https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&p=f&t=kgGgzBfNxlV73m9J-1&scaling=scale-down&content-scaling=fixed&page-id=194%3A839&starting-point-node-id=8735%3A3732"
 ---
 
 ## Problem and goal
@@ -96,7 +99,7 @@ For each persona I built a journey map that showed me where calm is lost and whe
 
 ![High-fidelity screens: Home, Exercises and My progress](img:wy-hifi)
 
-**Prototype.** [Open it in Figma](https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8457-3245&p=f&t=DD39fRHHVm9bnTrB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8457%3A3232) and walk through the guided breathing flow.
+**Prototype.** [Open it in Figma](https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&p=f&t=kgGgzBfNxlV73m9J-1&scaling=scale-down&content-scaling=fixed&page-id=194%3A839&starting-point-node-id=8735%3A3732) and walk through the guided breathing flow.
 
 ## Usability test
 
@@ -125,24 +128,42 @@ The finding about the selected icon was left unresolved in this version; I picke
 
 ![UI Kit v1.0: accent colors Primary, Anxiety, Stress, Sleep and Focus with their hex codes](img:wy-uikit)
 
-**v1.1, later audit (September 2026).** I measured contrast against WCAG 2.2 AA and found failures I had not seen while designing. I rebuilt the kit in [a new Figma file](https://www.figma.com/design/GHPCtHubSztEL1khHyVq3t) with four variable collections, nine text styles, two shadows and 11 components with states (focus, pressed, disabled). It was not tested with users.
+**v1.1, later audit (September 2026).** I measured contrast against WCAG 2.2 AA and found failures I had not seen while designing. I rebuilt the kit in [a separate Figma file](https://www.figma.com/design/GHPCtHubSztEL1khHyVq3t) with four variable collections, nine text styles, two shadows and 11 components with states (focus, pressed, disabled). It was not tested with users.
 
-| Element | v1.0 | v1.1 |
+**Applied to the screens (October 2026).** When I took the screens to Hi-Fi v2, I brought everything into the project file. The UI Kit grew to 44 components (70 counting their variants) in six sections, and v1.1 became a "Design System" page with 48 variables in four collections. I corrected the colors in the UI Kit styles and in the Design System variables with the same values, so the screens, the kit and the system match. These are the changes I measured on the screens:
+
+| Element | Before | Now |
 |---|---|---|
-| "Respira ahora" text | White on gradient, 1.82 to 2.91:1 | Text #083028, 4.93 to 7.88:1 |
-| Category badges | 2.33 to 3.55:1 | Safe text colors, 4.76 to 6.34:1 |
-| Active tab | Blue #007AFF, 4.02:1 | #0369A1 with top indicator, 5.93:1 |
-| Selected mood | White on light blue, 2.77 to 4.10:1 | #0369A1 with ✓ mark, 5.93:1 |
-| Secondary text | Black at 30 to 50%, 2.09 to 3.92:1 | #5F6472, 5.56:1 |
-| Small buttons | 30 and 36 px | 44 px |
-| Minimum text | 9 and 10 px | 11 and 12 px |
+| Buttons, links and active tab | White on #0EA5E9, 2.77:1 | #0369A1, 5.93:1 |
+| Secondary text | #717182, 4.51 to 4.79:1 | #5F6472, 5.56 to 5.91:1 |
+| Hang-up button | White on #EF4444, 3.76:1 | #DC2626, 4.83:1 |
+| Calendar numbers on green and orange | White, 2.54 and 2.80:1 | #111111, 7.44 and 6.74:1 |
+| Progress figures (12 and 5) | #10B981 and #F97316 on white, 2.54 and 2.80:1 | #047857 and #C2410C, 5.48 and 5.18:1 |
+
+![The project Design System: color variables for text, surface, border, action, categories, calm and tabs, with their corrected codes](img:wy-ds-color)
+
+Other v1.1 fixes live in the Design System components and are not on the screens yet: badges with safe text colors (4.76 to 6.34:1), 44 px small buttons, a ✓ mark on the selected mood and states for focus, pressed and disabled. The earlier "Respira ahora" had 1.82 to 2.91:1 with white text on a gradient; in Hi-Fi v2 I replaced it with a hero with a photo. I measured the white text over the photo: the title and subtitle are 7.15:1 or higher at the worst point, and I darkened the "Recomendado" tag background because it dropped to 3.52:1 over the bright glints and is now 11.12:1 at minimum.
+
+**Expanded UI Kit in the project file.** It has 15 color styles, 21 text styles, two shadows and four radii (10, 14, 18 and 20 px). Its six sections are navigation and headers, buttons and forms, cards, lists and calendar, mood, and icons and breathing. The components are linked to the prototype screens, such as the exercise card with thumbnail, the breathing hero with photo, the mood selector and the list row.
+
+![UI Kit foundations: 15 color styles, text styles in Poppins and Inter, two shadows and four radii](img:wy-kit-fund)
+
+![Card components: exercise, recommended, average mood, progress, goal, weekly chart, container, thumbnail and breathing hero](img:wy-kit-cards)
+
+![Mood components: emojis, mood tiles with selected state and selectors](img:wy-kit-mood)
+
+![Button and form components: primary button with states, secondary and danger, toggle, text field and notes](img:wy-kit-forms)
+
+![Navigation components: top bar, logo, tab, tab bar and profile menu](img:wy-kit-nav)
+
+![List rows and calendar days with mood state, plus brain icon, pause and play button, avatar and mini emojis](img:wy-kit-lists)
 
 ## Learnings and what I would do differently
 
 Designing With You left me four lessons and a clear list of what I would do differently.
 
 - **I designed the process well, but I missed talking to real people.** I practiced each stage with simulated interviews and tests, and that taught me to structure questions, synthesize and turn a finding into a change. Next time I would run a real round with about 5 people living with anxiety, with a script, consent and an analysis template, and compare what changes against what I had assumed.
-- **Auditing my own work found what I had not seen.** "Respira ahora" had a contrast of 1.82 to 2.91:1 with white text, far below the 4.5:1 of WCAG AA, even though I had listed "accessible" as a principle. I fixed it to 4.93–7.88:1. Now I measure contrast at the moment I choose a color, not at the end.
-- **Color and emoji are not enough.** The mood selector relied on them; I added a ✓ mark to the chosen state and 44 px touch targets, because a person in a moment of anxiety needs to know without doubt what they chose.
-- **A design system without variables does not scale.** v1.0 had hand-painted colors. v1.1 has 4 variable collections, 9 text styles and 11 components with states, and every contrast decision is documented.
-- **What I still need.** Test v1.1 with real users and replace the placeholder icons.
+- **Auditing my own work found what I had not seen.** "Respira ahora" had a contrast of 1.82 to 2.91:1 with white text, far below the 4.5:1 of WCAG AA, even though I had listed "accessible" as a principle. v1.1 fixed it to 4.93–7.88:1 and, on the final screens, the main blue went from 2.77 to 5.93:1. Now I measure contrast at the moment I choose a color, not at the end.
+- **Color and emoji are not enough.** The mood selector relied on them; in the Design System I added a ✓ mark to the chosen state and 44 px touch targets, because a person in a moment of anxiety needs to know without doubt what they chose.
+- **A design system without variables does not scale.** v1.0 had hand-painted colors. The project Design System has 48 variables in 4 collections, 21 text styles shared with the kit and 11 component sections with states, and every contrast decision is documented.
+- **What I still need.** Test the corrected colors with real users, bring the ✓ mark and 44 px targets to the screens, replace the placeholder icons.

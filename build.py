@@ -23,7 +23,8 @@ def process_image(name):
     src = IMG_SRC / f"{name}.png"
     im = Image.open(src).convert("RGBA") if Image.open(src).mode in ("RGBA", "P", "LA") else Image.open(src).convert("RGB")
     w, h = im.size
-    widths = sorted({x for x in (480, 960, 1600) if x < w} | {min(w, 1600)})
+    base = (960, 1600) if w >= 2000 else (480, 960, 1600)
+    widths = sorted({x for x in base if x < w} | {min(w, 1600)})
     out = DIST / "img"
     out.mkdir(parents=True, exist_ok=True)
     for x in widths:
