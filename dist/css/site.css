@@ -246,11 +246,15 @@ a:hover { color: var(--color-accent-hover); }
 .project-main .shot { aspect-ratio: auto; }
 .project-pending { border: 1px dashed var(--color-border-strong); border-radius: var(--radius-lg); padding: var(--space-6); align-content: start; }
 .project-pending h3 a::after { display: none; }
+.work-pending { display: grid; gap: var(--space-4); border-top: 1px solid var(--color-border-strong); padding-top: var(--space-6); }
+.work-pending-h { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-ink-muted); }
+.work-pending .project-pending { max-width: 44rem; }
 .project-pending .links { position: relative; }
 
 @media (min-width: 48em) {
   .project-main { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--space-7); align-items: center; }
-  .work-pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-7); align-items: start; }
+  .project-flip .shot { order: 2; }
+  .project-flip { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
 }
 
 /* ==========================================================================
