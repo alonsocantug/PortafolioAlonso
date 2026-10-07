@@ -40,9 +40,9 @@
     <p class="summary">A mobile app that leads to a guided 3–5 minute breathing exercise to lower anxiety. I designed it end to end, from research to design system.</p>
     <p class="actions"><a class="btn" href="https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&amp;p=f&amp;t=kgGgzBfNxlV73m9J-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=194%3A839&amp;starting-point-node-id=8735%3A3732" rel="noopener">Open the prototype in Figma</a></p>
     <dl class="facts">
-      <div><dt>Role</dt><dd>End-to-end UX/UI and Product Design: research, synthesis, flows, wireframes, UI, prototype, testing and design system</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div><div><dt>Tools</dt><dd>Figma, FigJam, Maze</dd></div><div><dt>Research</dt><dd>Literature review and 2 simulated interviews; 2 fictional personas</dd></div><div><dt>Testing</dt><dd>3 simulated users in Maze, 3 tasks</dd></div><div><dt>Design system</dt><dd>44-component UI Kit and v1.1 Design System with 48 variables, applied to the screens</dd></div>
+      <div><dt>Role</dt><dd>End-to-end UX/UI and Product Design: research, synthesis, flows, wireframes, UI, prototype, testing and design system</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div><div><dt>Tools</dt><dd>Figma, FigJam, Maze</dd></div><div><dt>Research</dt><dd>Literature review and 4 video-call interviews (about 10 min each); 2 personas</dd></div><div><dt>Testing</dt><dd>Real moderated usability test: 4 participants (acquaintances), 10 to 15 min per session, Maze and interviews</dd></div><div><dt>Design system</dt><dd>44-component UI Kit and v1.1 Design System with 48 variables, applied to the screens</dd></div>
     </dl>
-    <p class="note"><strong>Note on method.</strong> This is a practice exercise with no real client. The interviews, the personas (Sofía and Diego) and the Maze usability tests were simulated to walk through the full process, so their results illustrate the method and have no statistical value. The photographs of the people are illustrative. The interface, the prototype and the design system are real work and can be reviewed in Figma.</p>
+    <p class="note"><strong>Note on method.</strong> This is a practice exercise with no real client. The research combined a literature review and 4 real video-call interviews, about 10 minutes each, with bootcamp classmates; the two personas (Sofía and Diego) came out of them. The usability test was real, with 4 participants, all people I know, in sessions I ran myself with Maze and interviews; it is a small, non-representative sample, so it guides decisions but has no statistical value. The photographs of the people are illustrative. The interface, the prototype and the design system are real work and can be reviewed in Figma.</p>
   </header>
   <figure class="case-hero"><div class="shot bare"><img src="/img/wy-case-1600.webp" srcset="/img/wy-case-960.webp 960w, /img/wy-case-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="4600" height="1800" alt="Five With You screens on phones: welcome, home, guided breathing, mood log and progress" fetchpriority="high"></div></figure>
   
@@ -66,61 +66,29 @@
     </nav>
     <div class="prose"><h2 id="problem-and-goal">Problem and goal</h2>
 <p>According to the WHO, in 2023 there were 470 million people with an anxiety disorder and 322 million with depression; nearly 1 in 7 people (1.2 billion) lived with a mental disorder (<a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" rel="noopener">WHO, mental disorders fact sheet, updated 11 September 2026</a>).</p>
-<p>In the two simulated interviews, the apps people had already tried failed for the same reasons: too many features, long sessions, or built for meditation rather than fast calm. One person also doubted whether they were breathing correctly.</p>
+<p><strong>Starting hypothesis.</strong> A person with anxiety needs to recover calm in a few minutes, without configuring anything and without interrupting their routine. The literature supports slow breathing and short sessions; the rest (simplicity, mood logging) are design decisions that I later tested with people.</p>
 <p><strong>Goal.</strong> Design a mobile app that helps reduce anxiety and stress with guided breathing that is simple, quick and effective.</p>
 <p><strong>Proposed solution.</strong> Guided breathing sessions of 3 to 5 minutes, mood tracking, progress tracking and a simple, friendly interface.</p>
 <h2 id="research">Research</h2>
-<p><em>Practice interviews and personas; see the note on method above.</em></p>
+<p><em>Literature review and 4 short interviews; see the note on method above.</em></p>
 <p><strong>Literature review.</strong> I reviewed sources on anxiety and breathing: the <a href="https://www.who.int/news-room/fact-sheets/detail/mental-disorders" rel="noopener">WHO</a> for context, and three studies (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9873947" rel="noopener">Balban et al., 2023</a>, <em>Cell Reports Medicine</em>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11897343" rel="noopener">Luo et al., 2025</a>, <em>Scientific Reports</em>; <a href="https://www.frontiersin.org/articles/10.3389/fnhum.2025.1605862" rel="noopener">Iwabe et al., 2025</a>, <em>Frontiers in Human Neuroscience</em>). Three ideas guided the design:</p>
 <ul>
 <li>Slow breathing reduces anxiety: with 6-second cycles, self-reported anxiety and arousal dropped (Luo et al., 2025), and with a 4 s inhale and 6 s exhale, state anxiety dropped (Iwabe et al., 2025).</li>
-<li>Short sessions may be enough: in a study of 108 people, 5 minutes a day for 28 days improved mood more than meditation, and participants practiced about 20 of the 28 days (Balban et al., 2023). That study does not compare durations, so With You's 3–5 minutes is a design decision supported by the interviews.</li>
+<li>Short sessions may be enough: in a study of 108 people, 5 minutes a day for 28 days improved mood more than meditation, and participants practiced about 20 of the 28 days (Balban et al., 2023). That study does not compare durations, so With You's 3–5 minutes is a design decision that I later tested with users.</li>
 <li>That daily practice improved mood and reduced anxiety; in the same study sleep did not change, so the app does not promise better sleep from breathing (Balban et al., 2023).</li>
 </ul>
-<p><strong>Simulated interviews.</strong> Two university students. I wanted to know how they handle anxiety today, which strategies they use and what they would expect from a wellbeing app.</p>
-<div class="table-wrap" tabindex="0" role="region" aria-label="Table"><table><thead>
-<tr>
-<th>Topic</th>
-<th>Sofía</th>
-<th>Diego</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>When it appears</td>
-<td>Several jobs at once or an important exam</td>
-<td>University deadlines while clients wait for work</td>
-</tr>
-<tr>
-<td>What they do today</td>
-<td>Music, TikTok; tries to breathe deeply without knowing if she does it right</td>
-<td>Music or going out; keeps thinking about the same thing</td>
-</tr>
-<tr>
-<td>Previous apps</td>
-<td>Dropped one because it had too many things</td>
-<td>Some were long or more about meditating than calming down fast</td>
-</tr>
-<tr>
-<td>What they expect</td>
-<td>Open the app and start without much setup</td>
-<td>Something simple: open, breathe and go back to what he was doing</td>
-</tr>
-<tr>
-<td>Duration</td>
-<td>About 5 minutes</td>
-<td>Between 3 and 5 minutes</td>
-</tr>
-<tr>
-<td>Tracking</td>
-<td>See whether it improves over time</td>
-<td>Know how much he breathed and compare the week</td>
-</tr>
-</tbody>
-</table></div><h2 id="synthesis">Synthesis</h2>
+<p><strong>Interviews.</strong> I held 4 video-call interviews, about 10 minutes each, with bootcamp classmates, to understand how they experience anxiety and what they would look for in a breathing app. It is a small sample close to me, so I use it to guide the design, not to generalize.</p>
+<h2 id="synthesis">Synthesis</h2>
 <p><strong>Key insight.</strong> People need to recover calm in a few minutes without interrupting their daily routine.</p>
-<p>The two interviews produced four findings: they look for a fast way to calm down, they prefer simple apps, they consider 3–5 minute sessions ideal, and they like keeping a record of how they feel.</p>
-<p><strong>Two fictional personas</strong>, built from those simulated interviews:</p>
+<p>The interviews and the literature produced five insights:</p>
+<ol>
+<li><strong>Immediate access is essential.</strong> People need to open the app and start breathing within seconds.</li>
+<li><strong>Short sessions work best.</strong> Sessions of 3 to 5 minutes fit daily routines.</li>
+<li><strong>Simplicity reduces friction.</strong> A clean, intuitive interface helps people focus on breathing.</li>
+<li><strong>Tracking builds awareness.</strong> Mood and progress tracking helps people see improvement.</li>
+<li><strong>Personalization increases engagement.</strong> Personalized content and recommendations make the experience more meaningful.</li>
+</ol>
+<p><strong>Two personas</strong>, built from the 4 interviews and the literature. Each quote is illustrative and sums up that person's need:</p>
 <ul>
 <li><strong>Sofía</strong>, university student. Feels anxious before exams and deadlines. Wants to reduce anxiety and improve focus. Frustration: complex apps and long sessions. <em>&quot;I just need something that helps me calm down when I feel overwhelmed.&quot;</em></li>
 <li><strong>Diego</strong>, student and freelance designer. Lives with too many deliverables and struggles to disconnect at the end of the day. Wants to sleep better and find moments of calm without altering his routine. <em>&quot;When I feel overwhelmed, I need something that helps me clear my mind quickly.&quot;</em></li>
@@ -131,29 +99,34 @@
 <p><strong>Key decision.</strong> A direct shortcut to guided breathing from the home screen, designed so the exercise can start in fewer than 4 taps. This is a design goal, not a measurement: with it I aim to reduce friction and increase the chance that a person finishes the session.</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="Table"><table><thead>
 <tr>
-<th>Finding</th>
+<th>Insight</th>
 <th>Design decision</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>They want to calm down fast</td>
+<td>1. Immediate access</td>
 <td>&quot;Respira ahora&quot; (Breathe now) button on the home screen</td>
 </tr>
 <tr>
-<td>They prefer simple apps</td>
-<td>Four tabs (Home, Exercises, My progress, Profile) and one main action per screen</td>
-</tr>
-<tr>
-<td>3–5 minute sessions</td>
+<td>2. Short sessions</td>
 <td>Short exercises by category</td>
 </tr>
 <tr>
-<td>They like tracking</td>
+<td>3. Simplicity</td>
+<td>Four tabs (Home, Exercises, My progress, Profile) and one main action per screen</td>
+</tr>
+<tr>
+<td>4. Tracking</td>
 <td>Mood logging and a progress screen</td>
 </tr>
+<tr>
+<td>5. Personalization</td>
+<td>Mood selector and recommended exercises on the home screen</td>
+</tr>
 </tbody>
-</table></div><h2 id="design">Design</h2>
+</table></div><p>The usability test pointed the same way on three of these insights (immediate access, 3–5 minute sessions and seeing progress). I did not measure how simple the navigation is, nor personalization.</p>
+<h2 id="design">Design</h2>
 <p><strong>Information architecture.</strong> The app has four sections: Home (&quot;Respira ahora&quot;, mood of the day, recommendations), Exercises (Anxiety, Stress, Focus, Sleep and relaxation), Emotional tracking (log mood, history, statistics) and Profile (data, goals, settings). The map also includes Help, with wellbeing tips and support resources, which I left out of the prototype as future scope.</p>
 <p><figure><img src="/img/wy-ia-en-1600.webp" srcset="/img/wy-ia-en-960.webp 960w, /img/wy-ia-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2080" height="738" alt="With You information architecture: Home, Exercises, Emotional tracking, Profile and Help with their subsections" loading="lazy" decoding="async"></figure></p>
 <p><strong>User flows</strong>, one per persona:</p>
@@ -168,36 +141,32 @@
 <p><strong>High fidelity.</strong> Four mobile screens in Spanish: Home (greeting, mood selector, recommended exercises and &quot;Respira ahora&quot;), Exercises (four categories with duration), My progress (completed sessions, streak days, average mood and sessions this week) and Profile.</p>
 <p><figure><img src="/img/wy-hifi-1600.webp" srcset="/img/wy-hifi-960.webp 960w, /img/wy-hifi-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="3000" height="2040" alt="High-fidelity screens: Home, Exercises and My progress" loading="lazy" decoding="async"></figure></p>
 <p><strong>Prototype.</strong> <a href="https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&amp;p=f&amp;t=kgGgzBfNxlV73m9J-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=194%3A839&amp;starting-point-node-id=8735%3A3732" rel="noopener">Open it in Figma</a> and walk through the guided breathing flow.</p>
+<p><strong>This page and Behance.</strong> The Behance case shows the earlier version of the design. The prototype and screens on this page are version 2 (October 2026): “Respira ahora” went from a gradient button to a hero with a photo, the colors were corrected for contrast (the main blue went from 2.77:1 to 5.93:1, among other changes) and the UI Kit grew to 44 components with a 48-variable Design System. The detail of each change is in the Design System section.</p>
 <h2 id="usability-test">Usability test</h2>
-<p><em>Practice test with 3 fictional users in Maze; see the note on method above.</em></p>
+<p><em>Real test with 4 participants; see the note on method above.</em></p>
+<p><strong>Method.</strong> A moderated usability test on the mobile prototype to validate navigation, the breathing experience and overall usability. Four people close to me took part, in 10 to 15 minute sessions using Maze and interviews. I planned and ran it myself.</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="Table"><table><thead>
 <tr>
-<th>Task</th>
-<th>Result</th>
+<th>Finding</th>
+<th>Change</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1. Start a guided breathing session</td>
-<td>All 3 found the main button in about 8 seconds</td>
+<td>People expected to start a breathing session with a single tap</td>
+<td>I redesigned the main &quot;Respira ahora&quot; button</td>
 </tr>
 <tr>
-<td>2. Log their mood when finished</td>
-<td>All 3 completed the log without help; one person suggested marking which one was chosen</td>
+<td>They preferred sessions of 3 to 5 minutes</td>
+<td>Short guided exercises became the default</td>
 </tr>
 <tr>
-<td>3. Check their session progress</td>
-<td>Two took a few seconds to find the section and all 3 were confused by &quot;Historial&quot;</td>
+<td>They wanted to see their progress over time</td>
+<td>I added visual tracking to the profile section</td>
 </tr>
 </tbody>
-</table></div><p><strong>Findings.</strong> The main navigation is intuitive and &quot;Respira ahora&quot; stands out. Mood logging is simple, although it is not clear which icon was selected. &quot;Historial&quot; is confusing and people want to see their progress clearly.</p>
-<p><strong>Changes.</strong></p>
-<ol>
-<li>&quot;Mi historial&quot; was renamed <strong>&quot;Mi progreso&quot;</strong>.</li>
-<li>The <strong>&quot;Respira ahora&quot;</strong> button became more prominent and gained a background that highlights the chosen emotion.</li>
-</ol>
-<p><figure><img src="/img/wy-cambios-495.webp" srcset="/img/wy-cambios-480.webp 480w, /img/wy-cambios-495.webp 495w" sizes="(min-width: 70rem) 1120px, 100vw" width="495" height="422" alt="Home screen before (left) and after (right) the test: the Respira ahora button gains a background and the chosen mood is highlighted" loading="lazy" decoding="async"></figure></p>
-<p>The finding about the selected icon was left unresolved in this version; I picked it up in the design system audit.</p>
+</table></div><p><figure><img src="/img/wy-cambios-495.webp" srcset="/img/wy-cambios-480.webp 480w, /img/wy-cambios-495.webp 495w" sizes="(min-width: 70rem) 1120px, 100vw" width="495" height="422" alt="Home screen before (left) and after (right) the test: the Respira ahora button gains a background and the chosen mood is highlighted" loading="lazy" decoding="async"></figure></p>
+<p><strong>What I still don't know.</strong> With 4 acquaintances I cannot generalize, and I did not measure task time or success rate. The changes respond to what I observed and what people said; they were not validated in a second round.</p>
 <h2 id="design-system">Design System</h2>
 <p><strong>v1.0, the project UI Kit.</strong> Poppins for headings and Inter for body, seven semantic colors (Primary, Anxiety, Stress, Sleep, Focus, Calm and Alert), a radius scale, two shadows and components such as exercise card, badges, progress bars, tab bar and avatar. Colors were painted by hand, without Figma variables.</p>
 <p><figure><img src="/img/wy-uikit-695.webp" srcset="/img/wy-uikit-480.webp 480w, /img/wy-uikit-695.webp 695w" sizes="(min-width: 70rem) 1120px, 100vw" width="695" height="315" alt="UI Kit v1.0: accent colors Primary, Anxiety, Stress, Sleep and Focus with their hex codes" loading="lazy" decoding="async"></figure></p>
@@ -249,7 +218,7 @@
 <h2 id="learnings-and-what-i-would-do-differently">Learnings and what I would do differently</h2>
 <p>Designing With You left me four lessons and a clear list of what I would do differently.</p>
 <ul>
-<li><strong>I designed the process well, but I missed talking to real people.</strong> I practiced each stage with simulated interviews and tests, and that taught me to structure questions, synthesize and turn a finding into a change. Next time I would run a real round with about 5 people living with anxiety, with a script, consent and an analysis template, and compare what changes against what I had assumed.</li>
+<li><strong>I talked to real people, but people close to me and in short sessions.</strong> The 4 interviews of about 10 minutes and the test with 4 acquaintances taught me to ask, moderate, observe and turn a finding into a change. Next time I would run longer interviews, with about 5 people living with anxiety who are not close to me, with a script, consent and an analysis template, and measure task success and time to compare against my assumptions.</li>
 <li><strong>Auditing my own work found what I had not seen.</strong> &quot;Respira ahora&quot; had a contrast of 1.82 to 2.91:1 with white text, far below the 4.5:1 of WCAG AA, even though I had listed &quot;accessible&quot; as a principle. v1.1 fixed it to 4.93–7.88:1 and, on the final screens, the main blue went from 2.77 to 5.93:1. Now I measure contrast at the moment I choose a color, not at the end.</li>
 <li><strong>Color and emoji are not enough.</strong> The mood selector relied on them; in the Design System I added a ✓ mark to the chosen state and 44 px touch targets, because a person in a moment of anxiety needs to know without doubt what they chose.</li>
 <li><strong>A design system without variables does not scale.</strong> v1.0 had hand-painted colors. The project Design System has 48 variables in 4 collections, 21 text styles shared with the kit and 11 component sections with states, and every contrast decision is documented.</li>
