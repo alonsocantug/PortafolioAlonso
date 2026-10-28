@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhatsApp reminders for a clinic — Case study</title>
-<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
+<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Working prototype under test in a real environment, metrics pending.">
 <meta name="color-scheme" content="light dark">
 <link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
 <link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WhatsApp reminders for a clinic — Case study">
-<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
+<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Working prototype under test in a real environment, metrics pending.">
 <meta property="og:locale" content="en_US">
 <link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
 <script>var d=document.documentElement;d.classList.add("js");setTimeout(function(){if(!window.__site)d.classList.add("js-failed")},3000)</script>
@@ -36,21 +36,21 @@
 <article class="wrap">
   <header class="page-head">
     <p class="crumbs"><a href="/en/projects/">Projects</a></p>
-    <ul class="tags" role="list"><li class="chip">Proposal to a real client</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Pilot not started</li></ul>
+    <ul class="tags" role="list"><li class="chip">Proposal to a real client</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Pilot in testing</li></ul>
     <h1>WhatsApp appointment reminders and booking requests for a clinic</h1>
     <p class="summary">A system that every evening messages patients who have an appointment the next day on WhatsApp and lets them confirm, reschedule or request an appointment with buttons. I proposed it to a clinic, built it with Make, Google Sheets and the official WhatsApp platform, and reviewed every message the way the patient experiences it.</p>
     
     <dl class="facts">
       <div><dt>Role</dt><dd>Conversation design, automation build, documentation and commercial proposal</dd></div><div><dt>Tools</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Scope</dt><dd>Daily reminder with buttons, menu, appointment request, rescheduling, follow-up, opt-out and front-desk alert</dd></div><div><dt>Out of scope</dt><dd>Real-time availability scheduling, an AI assistant and medical software integration (quoted separately)</dd></div>
     </dl>
-    <p class="note"><strong>Note on status.</strong> I built and tested it with Meta&#39;s test number, an example schedule and my own phone. There are no real patients and no metrics yet, so I do not claim any reduction in no-shows. The names, phone numbers and appointments in the images are fictional. I do not publish the clinic&#39;s name or prices.</p>
+    <p class="note"><strong>Note on status.</strong> I built and tested it with Meta&#39;s test number, an example schedule and my own phone. It is now under test in a real environment and there are no metrics yet, so I do not claim any reduction in no-shows. The names, phone numbers and appointments in the images are fictional. I do not publish the clinic&#39;s name or prices.</p>
   </header>
   <figure class="case-hero"><div class="shot bare"><img src="/img/wa-card-en-1600.webp" srcset="/img/wa-card-en-960.webp 960w, /img/wa-card-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2400" height="1600" alt="Two phones with example messages: a reminder with Confirm and Reschedule buttons, and a menu with three buttons" fetchpriority="high"></div></figure>
   
   <div class="case">
     <nav class="case-nav" aria-label="On this page">
       <strong>On this page</strong>
-      <ol><li><a href="#problem-and-goal">Problem and goal</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#iterating-on-the-conversational-content">Iterating on the conversational content</a></li><li><a href="#accessibility-review">Accessibility review</a></li><li><a href="#design-decisions">Design decisions</a></li><li><a href="#proposal-and-documentation">Proposal and documentation</a></li><li><a href="#what-i-do-not-know-yet">What I do not know yet</a></li></ol>
+      <ol><li><a href="#problem-and-goal">Problem and goal</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#iterating-on-the-conversational-content">Iterating on the conversational content</a></li><li><a href="#accessibility-review">Accessibility review</a></li><li><a href="#design-decisions">Design decisions</a></li><li><a href="#proposal-and-documentation">Proposal and documentation</a></li><li><a href="#current-status">Current status</a></li></ol>
     </nav>
     <div class="prose"><h2 id="problem-and-goal">Problem and goal</h2>
 <p><strong>The problem.</strong> When a patient forgets an appointment, the clinic loses that slot and its revenue. The front desk also spends time every day calling or messaging people one by one to confirm. With 20 appointments a day and 2 minutes per confirmation, that is about 40 minutes a day, close to 3 hours a week (an example calculation from the proposal, not a measurement from the clinic).</p>
@@ -142,14 +142,9 @@
 <li><strong>Implementation checklist.</strong> Ordered steps in 15 phases, with a table of known errors and their fixes, built from the failures I ran into while building it.</li>
 <li><strong>How to explain it to the client.</strong> A plain-language guide: what they gain, what they provide and what each part costs, and what not to promise, such as a percentage reduction in no-shows or a start date before Meta's approvals.</li>
 </ol>
-<p>The proposal separates what is included from what is quoted separately, and proposes a three-month pilot in which the clinic shares metrics at 30 and 90 days. Since the pilot has not started, those metrics do not exist.</p>
-<h2 id="what-i-do-not-know-yet">What I do not know yet</h2>
-<ul>
-<li><strong>Whether it works with real patients.</strong> Everything was tested with Meta's test number. A real number still has to be registered and the business verified, and the current per-message rate for Mexico confirmed.</li>
-<li><strong>How much it reduces no-shows.</strong> That is why the pilot first records the last month's no-shows and compares them at 30 and 90 days.</li>
-<li><strong>What the clinic prefers.</strong> Informal or formal address, and the real hours, phone and address, which are examples today.</li>
-<li><strong>What happens with a real Follow-up date that falls on a Sunday.</strong> The rule is built and still needs testing.</li>
-</ul>
+<p>The proposal separates what is included from what is quoted separately, and proposes a three-month pilot in which the clinic shares metrics at 30 and 90 days. Since the pilot is only just under test, those metrics do not exist yet.</p>
+<h2 id="current-status">Current status</h2>
+<p>The prototype works and is being tested in a real environment. That test will measure how much it reduces no-shows and what the clinic prefers.</p>
 </div>
   </div>
 </article>

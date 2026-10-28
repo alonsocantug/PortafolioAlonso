@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recordatorios por WhatsApp para una clínica — Caso de estudio</title>
-<meta name="description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta name="description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Prototipo funcionando y en prueba en un entorno real, con métricas pendientes.">
 <meta name="color-scheme" content="light dark">
 <link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
 <link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Recordatorios por WhatsApp para una clínica — Caso de estudio">
-<meta property="og:description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta property="og:description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Prototipo funcionando y en prueba en un entorno real, con métricas pendientes.">
 <meta property="og:locale" content="es_MX">
 <link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
 <script>var d=document.documentElement;d.classList.add("js");setTimeout(function(){if(!window.__site)d.classList.add("js-failed")},3000)</script>
@@ -36,21 +36,21 @@
 <article class="wrap">
   <header class="page-head">
     <p class="crumbs"><a href="/es/proyectos/">Proyectos</a></p>
-    <ul class="tags" role="list"><li class="chip">Propuesta a cliente real</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Piloto sin arrancar</li></ul>
+    <ul class="tags" role="list"><li class="chip">Propuesta a cliente real</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Piloto en pruebas</li></ul>
     <h1>Recordatorios y solicitud de citas por WhatsApp para una clínica</h1>
     <p class="summary">Un sistema que cada tarde avisa por WhatsApp a quien tiene cita al día siguiente y deja que el paciente confirme, reprograme o pida cita con botones. Lo propuse a una clínica, lo construí con Make, Google Sheets y la plataforma oficial de WhatsApp, y revisé cada mensaje como lo vive el paciente.</p>
     
     <dl class="facts">
       <div><dt>Rol</dt><dd>Diseño de la conversación, construcción de la automatización, documentación y propuesta comercial</dd></div><div><dt>Herramientas</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Alcance</dt><dd>Recordatorio diario con botones, menú, solicitud de cita, reprogramación, seguimiento, baja y aviso a recepción</dd></div><div><dt>Fuera de alcance</dt><dd>Agenda con disponibilidad en tiempo real, asistente con IA e integración con software médico (se cotizan aparte)</dd></div>
     </dl>
-    <p class="note"><strong>Nota sobre el estado.</strong> Lo construí y probé con el número de prueba de Meta, una agenda de ejemplo y mi propio teléfono. Todavía no hay pacientes reales ni métricas, así que no afirmo ninguna reducción de inasistencias. Los nombres, teléfonos y citas de las imágenes son ficticios. No publico el nombre de la clínica ni precios.</p>
+    <p class="note"><strong>Nota sobre el estado.</strong> Lo construí y probé con el número de prueba de Meta, una agenda de ejemplo y mi propio teléfono. Hoy está en prueba en un entorno real y todavía no hay métricas, así que no afirmo ninguna reducción de inasistencias. Los nombres, teléfonos y citas de las imágenes son ficticios. No publico el nombre de la clínica ni precios.</p>
   </header>
   <figure class="case-hero"><div class="shot bare"><img src="/img/wa-card-1600.webp" srcset="/img/wa-card-960.webp 960w, /img/wa-card-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2400" height="1600" alt="Dos teléfonos con mensajes de ejemplo: un recordatorio con botones Confirmar y Reprogramar, y un menú con tres botones" fetchpriority="high"></div></figure>
   
   <div class="case">
     <nav class="case-nav" aria-label="En esta página">
       <strong>En esta página</strong>
-      <ol><li><a href="#problema-y-objetivo">Problema y objetivo</a></li><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#iteracion-del-contenido-conversacional">Iteración del contenido conversacional</a></li><li><a href="#revision-de-accesibilidad">Revisión de accesibilidad</a></li><li><a href="#decisiones-de-diseno">Decisiones de diseño</a></li><li><a href="#propuesta-y-documentacion">Propuesta y documentación</a></li><li><a href="#que-no-se-todavia">Qué no sé todavía</a></li></ol>
+      <ol><li><a href="#problema-y-objetivo">Problema y objetivo</a></li><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#iteracion-del-contenido-conversacional">Iteración del contenido conversacional</a></li><li><a href="#revision-de-accesibilidad">Revisión de accesibilidad</a></li><li><a href="#decisiones-de-diseno">Decisiones de diseño</a></li><li><a href="#propuesta-y-documentacion">Propuesta y documentación</a></li><li><a href="#estado-actual">Estado actual</a></li></ol>
     </nav>
     <div class="prose"><h2 id="problema-y-objetivo">Problema y objetivo</h2>
 <p><strong>El problema.</strong> Cuando un paciente olvida su cita, la clínica pierde ese espacio y su ingreso. Además, recepción dedica tiempo cada día a llamar o escribir uno por uno para confirmar. Con 20 citas al día y 2 minutos por confirmación, son unos 40 minutos diarios, cerca de 3 horas a la semana (es un cálculo de ejemplo de la propuesta, no una medición de la clínica).</p>
@@ -142,14 +142,9 @@
 <li><strong>Lista de implementación.</strong> Pasos en orden, en 15 fases, con una tabla de errores conocidos y su solución, que armé con los fallos que me encontré al construirlo.</li>
 <li><strong>Cómo explicárselo al cliente.</strong> Guía sin tecnicismos: qué gana, qué pone y cuánto cuesta cada parte, y qué no conviene prometer, por ejemplo un porcentaje de reducción de ausencias o una fecha de arranque antes de tener aprobaciones de Meta.</li>
 </ol>
-<p>La propuesta separa lo que incluye de lo que se cotiza aparte, y propone un piloto de tres meses en el que la clínica comparte métricas a los 30 y 90 días. Como el piloto todavía no arranca, esas métricas no existen.</p>
-<h2 id="que-no-se-todavia">Qué no sé todavía</h2>
-<ul>
-<li><strong>Si funciona con pacientes reales.</strong> Todo se probó con el número de prueba de Meta. Falta dar de alta un número real y verificar el negocio, y la tarifa por mensaje vigente para México.</li>
-<li><strong>Cuánto reduce las inasistencias.</strong> Por eso el piloto mide primero las inasistencias del último mes y las compara a los 30 y 90 días.</li>
-<li><strong>Qué prefiere la clínica.</strong> Tuteo o usted, y el horario, teléfono y dirección reales, que hoy son de ejemplo.</li>
-<li><strong>Qué pasa con una fecha real de Seguimiento que cae en domingo.</strong> La regla está hecha y falta probarla.</li>
-</ul>
+<p>La propuesta separa lo que incluye de lo que se cotiza aparte, y propone un piloto de tres meses en el que la clínica comparte métricas a los 30 y 90 días. Como el piloto apenas está en prueba, esas métricas aún no existen.</p>
+<h2 id="estado-actual">Estado actual</h2>
+<p>El prototipo funciona y está en prueba en un entorno real. Con esa prueba se va a medir cuánto reduce las inasistencias y qué prefiere la clínica.</p>
 </div>
   </div>
 </article>
