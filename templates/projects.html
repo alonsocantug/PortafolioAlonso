@@ -7,10 +7,7 @@
   </header>
   <div class="work" style="padding-bottom:var(--space-section)">
     {% with p = projects[0] %}{% include "_project.html" %}{% endwith %}
-    <div class="work-pair">
-      {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
-      {% with p = projects[2] %}{% include "_project.html" %}{% endwith %}
-    </div>
+    {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
   </div>
 </div>
 {% endblock %}

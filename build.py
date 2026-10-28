@@ -119,11 +119,12 @@ def projects_for(lang):
         dict(title=t["p_wy_title"], text=t["p_wy_text"], tags=t["p_wy_tags"], facts=t["p_wy_facts"], main=True,
              image=picture("wy-card", t["p_wy_alt"], sizes="(min-width: 48em) 55vw, 100vw"),
              href=path_of(lang, "with-you"), cta=t["read_case"]),
-        dict(title=t["p_fi_title"], text=t["p_fi_text"], tags=t["p_fi_tags"], facts=t["p_fi_facts"],
-             image=picture("fi-card", t["p_fi_alt"], sizes="(min-width: 48em) 50vw, 100vw"),
+        dict(title=t["p_fi_title"], text=t["p_fi_text"], tags=t["p_fi_tags"], facts=t["p_fi_facts"], main=True, flip=True,
+             image=picture("fi-card", t["p_fi_alt"], sizes="(min-width: 48em) 55vw, 100vw"),
              href=path_of(lang, "firmia"), cta=t["read_case"]),
-        dict(title=t["p_ds_title"], text=t["p_ds_text"], tags=t["p_ds_tags"], pending=True,
-             href=D.BEHANCE, cta=t["see_behance"]),
+        dict(title=t["p_wa_title"], text=t["p_wa_text"], tags=t["p_wa_tags"], facts=t["p_wa_facts"], main=True,
+             image=picture("wa-card" + ("-en" if lang == "en" else ""), t["p_wa_alt"], sizes="(min-width: 48em) 55vw, 100vw"),
+             href=path_of(lang, "recordatorios"), cta=t["read_case"]),
     ]
 
 def main():
@@ -143,7 +144,7 @@ def main():
         render(lang, "home", "home.html", "home", t["home_title"], t["home_desc"], projects=projs, jsonld=jsonld,
                hero_img=picture("wy-hero", t["hero_alt"], sizes="(min-width: 64em) 45vw, 100vw", eager=True))
         render(lang, "projects", "projects.html", "projects", t["projects_title"], t["projects_desc"], projects=projs)
-        for key in ("with-you", "firmia"):
+        for key in ("with-you", "firmia", "recordatorios"):
             meta, body, toc = load_case(lang, key)
             hero = picture(meta["hero"], meta["hero_alt"], sizes="(min-width: 70rem) 1120px, 100vw", eager=True) if meta.get("hero") else None
             embed = None

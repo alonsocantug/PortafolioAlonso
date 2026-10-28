@@ -28,10 +28,7 @@
     </div>
     <div class="work">
       {% with p = projects[0] %}{% include "_project.html" %}{% endwith %}
-      <div class="work-pair">
-        {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
-        {% with p = projects[2] %}{% include "_project.html" %}{% endwith %}
-      </div>
+      {% with p = projects[1] %}{% include "_project.html" %}{% endwith %}
     </div>
   </div>
 </section>

@@ -8,11 +8,11 @@ facts:
   - ["Rol", "UX/UI y Product Design de principio a fin: investigación, síntesis, flujos, wireframes, UI, prototipo, pruebas y sistema de diseño"]
   - ["Duración", "3 semanas"]
   - ["Herramientas", "Figma, FigJam, Maze"]
-  - ["Investigación", "Revisión bibliográfica y 2 entrevistas simuladas; 2 personas ficticias"]
-  - ["Pruebas", "3 usuarios simulados en Maze, 3 tareas"]
+  - ["Investigación", "Revisión bibliográfica y 4 entrevistas por videollamada (unos 10 min cada una); 2 personas"]
+  - ["Pruebas", "Prueba de usabilidad moderada real: 4 participantes (conocidos), 10 a 15 min por sesión, Maze y entrevistas"]
   - ["Sistema de diseño", "UI Kit de 44 componentes y Design System v1.1 con 48 variables, aplicados a las pantallas"]
 note_label: Nota sobre el método.
-note: Es un ejercicio de práctica sin cliente real. Las entrevistas, las personas (Sofía y Diego) y las pruebas de usabilidad en Maze se simularon para recorrer el proceso completo, por lo que sus resultados ilustran el método y no tienen valor estadístico. Las fotografías de las personas son ilustrativas. La interfaz, el prototipo y el sistema de diseño son trabajo real y se pueden revisar en Figma.
+note: Es un ejercicio de práctica sin cliente real. La investigación combinó revisión bibliográfica y 4 entrevistas reales por videollamada, de unos 10 minutos cada una, con compañeros de bootcamp; de ahí salieron las dos personas (Sofía y Diego). La prueba de usabilidad sí fue real, con 4 participantes, todos conocidos míos, en sesiones que conduje yo con Maze y entrevistas; es una muestra pequeña y no representativa, así que orienta decisiones pero no tiene valor estadístico. Las fotografías de las personas son ilustrativas. La interfaz, el prototipo y el sistema de diseño son trabajo real y se pueden revisar en Figma.
 hero: wy-case
 hero_alt: "Cinco pantallas de With You en teléfonos: bienvenida, inicio, respiración guiada, registro de ánimo y progreso"
 embed: true
@@ -23,7 +23,7 @@ prototype: "https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alon
 
 Según la OMS, en 2023 había 470 millones de personas con un trastorno de ansiedad y 322 millones con depresión; casi 1 de cada 7 personas (1,200 millones) vivía con algún trastorno mental ([OMS, ficha sobre trastornos mentales, actualizada el 11 de septiembre de 2026](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)).
 
-En las dos entrevistas simuladas, las apps que ya habían probado fallaban por lo mismo: tenían demasiadas cosas, eran largas o estaban pensadas para meditar y no para calmarse rápido. Una persona también dudaba de si respiraba bien.
+**Hipótesis de partida.** Una persona con ansiedad necesita recuperar la calma en pocos minutos, sin configurar nada y sin interrumpir su rutina. La literatura respalda la respiración lenta y las sesiones breves; el resto (simplicidad, registro del ánimo) son decisiones de diseño que luego puse a prueba con personas.
 
 **Objetivo.** Diseñar una app móvil que ayude a reducir la ansiedad y el estrés con respiraciones guiadas, simples, rápidas y efectivas.
 
@@ -31,32 +31,29 @@ En las dos entrevistas simuladas, las apps que ya habían probado fallaban por l
 
 ## Investigación
 
-*Entrevistas y personas de ejercicio, ver la nota sobre el método al inicio.*
+*Revisión bibliográfica y 4 entrevistas breves, ver la nota sobre el método al inicio.*
 
 **Revisión bibliográfica.** Revisé fuentes sobre ansiedad y respiración: la [OMS](https://www.who.int/news-room/fact-sheets/detail/mental-disorders) para el contexto, y tres estudios ([Balban et al., 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC9873947), *Cell Reports Medicine*; [Luo et al., 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC11897343), *Scientific Reports*; [Iwabe et al., 2025](https://www.frontiersin.org/articles/10.3389/fnhum.2025.1605862), *Frontiers in Human Neuroscience*). Tres ideas guiaron el diseño:
 
 - La respiración lenta reduce la ansiedad: con ciclos de 6 segundos bajaron la ansiedad autorreportada y la activación (Luo et al., 2025), y con inhalación de 4 s y exhalación de 6 s bajó la ansiedad de estado (Iwabe et al., 2025).
-- Sesiones breves pueden bastar: en un estudio con 108 personas, 5 minutos al día durante 28 días mejoraron el ánimo más que la meditación, y la práctica de respiración fue de unos 20 de los 28 días (Balban et al., 2023). Ese estudio no compara duraciones, así que los 3 a 5 minutos de With You son una decisión de diseño apoyada en las entrevistas.
+- Sesiones breves pueden bastar: en un estudio con 108 personas, 5 minutos al día durante 28 días mejoraron el ánimo más que la meditación, y la práctica de respiración fue de unos 20 de los 28 días (Balban et al., 2023). Ese estudio no compara duraciones, así que los 3 a 5 minutos de With You son una decisión de diseño que después puse a prueba con usuarios.
 - Esa práctica diaria mejoró el ánimo y redujo la ansiedad; en ese mismo estudio no cambió el sueño, así que la app no promete mejorar el sueño con la respiración (Balban et al., 2023).
 
-**Entrevistas simuladas.** Dos jóvenes universitarios. Quise saber cómo manejan la ansiedad hoy, qué estrategias usan y qué esperarían de una app de bienestar.
-
-| Tema | Sofía | Diego |
-|---|---|---|
-| Cuándo aparece | Varios trabajos a la vez o un examen importante | Entregas de la universidad mientras clientes esperan trabajo |
-| Qué hace hoy | Música, TikTok; intenta respirar profundo sin saber si lo hace bien | Música o salir; sigue pensando en lo mismo |
-| Apps previas | Dejó una porque tenía demasiadas cosas | Algunas eran largas o más de meditar que de calmarse rápido |
-| Qué espera | Abrir la app y empezar sin configurar mucho | Que sea sencilla: abrir, respirar y volver a lo que hacía |
-| Duración | Unos 5 minutos | Entre 3 y 5 minutos |
-| Registro | Ver si mejora con el tiempo | Saber cuánto respiró y comparar la semana |
+**Entrevistas.** Hice 4 entrevistas por videollamada, de unos 10 minutos cada una, con compañeros del bootcamp, para entender cómo viven la ansiedad y qué buscarían en una app de respiración. Es una muestra pequeña y cercana a mí, así que las uso para orientar el diseño y no para generalizar.
 
 ## Síntesis
 
 **Insight principal.** Las personas necesitan recuperar la calma en pocos minutos sin interrumpir su rutina diaria.
 
-De las dos entrevistas salieron cuatro hallazgos: buscan una forma rápida de calmarse, prefieren apps simples, consideran ideal que las sesiones duren de 3 a 5 minutos y les gusta llevar un registro de cómo se sienten.
+De las entrevistas y la literatura salieron cinco insights:
 
-**Dos personas ficticias**, construidas a partir de esas entrevistas simuladas:
+1. **El acceso inmediato es esencial.** Hay que poder abrir la app y empezar a respirar en segundos.
+2. **Las sesiones cortas funcionan mejor.** De 3 a 5 minutos encajan en la rutina diaria.
+3. **La simplicidad reduce la fricción.** Una interfaz limpia e intuitiva ayuda a concentrarse en respirar.
+4. **El seguimiento crea conciencia.** Ver su ánimo y su progreso ayuda a notar la mejora.
+5. **La personalización aumenta el compromiso.** Contenido y recomendaciones personalizados hacen la experiencia más significativa.
+
+**Dos personas**, construidas a partir de las 4 entrevistas y de la literatura. Cada frase es ilustrativa y resume la necesidad de la persona:
 
 - **Sofía**, estudiante universitaria. Siente ansiedad antes de exámenes y entregas. Quiere reducir la ansiedad y mejorar su concentración. Frustración: apps complejas y sesiones largas. *“Solo necesito algo que me ayude a calmarme cuando me siento abrumada.”*
 - **Diego**, estudiante y diseñador freelance. Vive con exceso de entregas y le cuesta desconectarse al final del día. Quiere dormir mejor y encontrar momentos de calma sin alterar su rutina. *“Cuando me siento abrumado, necesito algo que me ayude a despejar mi mente rápidamente.”*
@@ -69,12 +66,15 @@ Para cada persona armé un journey map que me mostró dónde se pierde la calma 
 
 **Decisión clave.** Un acceso directo a la respiración guiada desde la pantalla principal, pensado para iniciar el ejercicio en menos de 4 toques. Es una meta de diseño, no una medición: con ella busco reducir la fricción y aumentar la probabilidad de que la persona termine la sesión.
 
-| Hallazgo | Decisión de diseño |
+| Insight | Decisión de diseño |
 |---|---|
-| Buscan calmarse rápido | Botón “Respira ahora” en la pantalla principal |
-| Prefieren apps simples | Cuatro pestañas (Inicio, Ejercicios, Mi progreso, Perfil) y una acción principal por pantalla |
-| Sesiones de 3 a 5 minutos | Ejercicios cortos por categoría |
-| Les gusta el registro | Registro del estado de ánimo y pantalla de progreso |
+| 1. Acceso inmediato | Botón “Respira ahora” en la pantalla principal |
+| 2. Sesiones cortas | Ejercicios cortos por categoría |
+| 3. Simplicidad | Cuatro pestañas (Inicio, Ejercicios, Mi progreso, Perfil) y una acción principal por pantalla |
+| 4. Seguimiento | Registro del estado de ánimo y pantalla de progreso |
+| 5. Personalización | Selector de ánimo y ejercicios recomendados en la pantalla principal |
+
+La prueba de usabilidad apuntó en la misma dirección en tres de estos insights (acceso inmediato, sesiones de 3 a 5 minutos y ver el progreso). La simplicidad de la navegación y la personalización no las medí.
 
 ## Diseño
 
@@ -101,26 +101,23 @@ Para cada persona armé un journey map que me mostró dónde se pierde la calma 
 
 **Prototipo.** [Ábrelo en Figma](https://www.figma.com/proto/ueVtfaqiM6nx04cCVxwbIT/With-you-app_Alonso-Cant%C3%BA?node-id=8735-3732&p=f&t=kgGgzBfNxlV73m9J-1&scaling=scale-down&content-scaling=fixed&page-id=194%3A839&starting-point-node-id=8735%3A3732) y recorre el flujo de respiración guiada.
 
-## Prueba de usabilidad simulada
+**Esta página y Behance.** El caso de Behance muestra la versión anterior del diseño. El prototipo y las pantallas de esta página son la versión 2 (octubre de 2026): “Respira ahora” pasó de un botón con degradado a un hero con foto, los colores se corrigieron por contraste (el azul principal pasó de 2.77:1 a 5.93:1, entre otros cambios) y el UI Kit creció a 44 componentes con un Design System de 48 variables. El detalle de cada cambio está en la sección Design System.
 
-*Prueba de ejercicio con 3 usuarios ficticios en Maze, ver la nota sobre el método al inicio.*
+## Prueba de usabilidad
 
-| Tarea | Resultado |
+*Prueba real con 4 participantes, ver la nota sobre el método al inicio.*
+
+**Método.** Una prueba de usabilidad moderada sobre el prototipo móvil para validar la navegación, la experiencia de respiración y la usabilidad general. Participaron 4 personas cercanas a mí, en sesiones de 10 a 15 minutos con Maze y entrevistas. Yo la planeé y la conduje.
+
+| Hallazgo | Cambio |
 |---|---|
-| 1. Iniciar una sesión de respiración guiada | Los 3 encontraron el botón principal en unos 8 segundos |
-| 2. Registrar su estado emocional al terminar | Los 3 completaron el registro sin ayuda; una persona sugirió marcar cuál se eligió |
-| 3. Consultar el progreso de sus sesiones | Dos tardaron unos segundos en encontrar la sección y los 3 confundieron “Historial” |
-
-**Hallazgos.** La navegación principal es intuitiva y “Respira ahora” destaca. El registro emocional es sencillo, aunque no queda claro cuál ícono se eligió. “Historial” confunde y las personas quieren ver su progreso con claridad.
-
-**Cambios.**
-
-1. “Mi historial” pasó a llamarse **“Mi progreso”**.
-2. El botón **“Respira ahora”** se hizo más llamativo y ganó un fondo que resalta la emoción elegida.
+| Esperaban iniciar una sesión de respiración con un solo toque | Rediseñé el botón principal “Respira ahora” |
+| Preferían sesiones de 3 a 5 minutos | Los ejercicios guiados cortos pasaron a ser los predeterminados |
+| Querían ver su progreso con el tiempo | Agregué seguimiento visual en la sección de perfil |
 
 ![Pantalla de inicio antes (izquierda) y después (derecha) de la prueba: el botón Respira ahora gana fondo y el ánimo elegido se resalta](img:wy-cambios)
 
-El hallazgo sobre el ícono elegido quedó sin resolver en esta versión; lo retomo en la auditoría del sistema de diseño.
+**Qué no sé todavía.** Con 4 conocidos no puedo generalizar, y no medí tiempos ni tasa de éxito por tarea. Los cambios responden a lo que observé y dijeron; no están validados con una segunda ronda.
 
 ## Design System
 
@@ -162,7 +159,7 @@ Otras correcciones de la v1.1 viven en los componentes del Design System y todav
 
 Diseñar With You me dejó cuatro aprendizajes y una lista clara de lo que haría distinto.
 
-- **Diseñé bien el proceso, pero me faltó hablar con personas reales.** Practiqué cada etapa con entrevistas y pruebas simuladas y eso me enseñó a estructurar preguntas, sintetizar y convertir un hallazgo en un cambio. La siguiente vez haría una ronda real con unas 5 personas que vivan ansiedad, con guión, consentimiento y una plantilla de análisis, y compararía qué cambia frente a lo que yo había supuesto.
+- **Hablé con personas reales, pero cercanas y en sesiones breves.** Las 4 entrevistas de unos 10 minutos y la prueba con 4 conocidos me enseñaron a preguntar, moderar, observar y convertir un hallazgo en un cambio. La siguiente vez haría entrevistas más largas, con unas 5 personas que vivan ansiedad y no tengan relación cercana conmigo, con guión, consentimiento y una plantilla de análisis, y mediría éxito de tarea y tiempo para comparar contra mis supuestos.
 - **Auditar mi propio trabajo encontró lo que yo no vi.** "Respira ahora" tenía un contraste de 1.82 a 2.91:1 con texto blanco, muy por debajo del 4.5:1 de WCAG AA, aunque yo había puesto "accesible" como principio. La v1.1 lo corrigió a 4.93–7.88:1 y, ya en las pantallas finales, el azul principal pasó de 2.77 a 5.93:1. Ahora mido el contraste en el momento en que elijo un color, no al final.
 - **El color y el emoji no bastan.** El selector de ánimo dependía de ellos; en el Design System agregué una marca ✓ al estado elegido y objetivos táctiles de 44 px, porque una persona en un momento de ansiedad necesita saber sin dudar qué eligió.
 - **Un sistema de diseño sin variables no escala.** La v1.0 tenía los colores pintados a mano. El Design System del proyecto tiene 48 variables en 4 colecciones, 21 estilos de texto compartidos con el kit y 11 secciones de componentes con estados, y cada decisión de contraste queda documentada.
