@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recordatorios por WhatsApp para una clínica — Caso de estudio</title>
+<meta name="description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica dermatológica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta name="color-scheme" content="light dark">
+<link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
+<link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
+<link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recordatorios por WhatsApp para una clínica — Caso de estudio">
+<meta property="og:description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica dermatológica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta property="og:locale" content="es_MX">
+<link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/es/">Alonso Cantú</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/es/proyectos/" aria-current="page">Proyectos</a>
+      <a href="/es/sobre-mi/">Sobre mí</a>
+      <a href="/es/cv/">CV</a>
+      <a class="lang" href="/en/projects/whatsapp-reminders/" lang="en" hreflang="en" aria-label="Read this site in English">English</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="/es/proyectos/">Proyectos</a></p>
+    <ul class="tags" role="list"><li class="chip">Propuesta a cliente real</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Piloto sin arrancar</li></ul>
+    <h1>Recordatorios y solicitud de citas por WhatsApp para una clínica</h1>
+    <p class="summary">Un sistema que cada tarde avisa por WhatsApp a quien tiene cita al día siguiente y deja que el paciente confirme, reprograme o pida cita con botones. Lo propuse a una clínica dermatológica, lo construí con Make, Google Sheets y la plataforma oficial de WhatsApp, y revisé cada mensaje como lo vive el paciente.</p>
+    
+    <dl class="facts">
+      <div><dt>Rol</dt><dd>Diseño de la conversación, construcción de la automatización, documentación y propuesta comercial</dd></div><div><dt>Herramientas</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Alcance</dt><dd>Recordatorio diario con botones, menú, solicitud de cita, reprogramación, seguimiento, baja y aviso a recepción</dd></div><div><dt>Fuera de alcance</dt><dd>Agenda con disponibilidad en tiempo real, asistente con IA e integración con software médico (se cotizan aparte)</dd></div>
+    </dl>
+    <p class="note"><strong>Nota sobre el estado.</strong> Lo construí y probé con el número de prueba de Meta, una agenda de ejemplo y mi propio teléfono. Todavía no hay pacientes reales ni métricas, así que no afirmo ninguna reducción de inasistencias. Los nombres, teléfonos y citas de las imágenes son ficticios. No publico el nombre de la clínica ni precios.</p>
+  </header>
+  <figure class="case-hero"><div class="shot bare"><img src="/img/wa-card-1600.webp" srcset="/img/wa-card-960.webp 960w, /img/wa-card-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2400" height="1600" alt="Dos teléfonos con mensajes de ejemplo: un recordatorio con botones Confirmar y Reprogramar, y un menú con tres botones" fetchpriority="high"></div></figure>
+  
+  <div class="case">
+    <nav class="case-nav" aria-label="En esta página">
+      <strong>En esta página</strong>
+      <ol><li><a href="#problema-y-objetivo">Problema y objetivo</a></li><li><a href="#como-funciona">Cómo funciona</a></li><li><a href="#iteracion-del-contenido-conversacional">Iteración del contenido conversacional</a></li><li><a href="#revision-de-accesibilidad">Revisión de accesibilidad</a></li><li><a href="#decisiones-de-diseno">Decisiones de diseño</a></li><li><a href="#propuesta-y-documentacion">Propuesta y documentación</a></li><li><a href="#que-no-se-todavia">Qué no sé todavía</a></li></ol>
+    </nav>
+    <div class="prose"><h2 id="problema-y-objetivo">Problema y objetivo</h2>
+<p><strong>El problema.</strong> Cuando un paciente olvida su cita, la clínica pierde ese espacio y su ingreso. Además, recepción dedica tiempo cada día a llamar o escribir uno por uno para confirmar. Con 20 citas al día y 2 minutos por confirmación, son unos 40 minutos diarios, cerca de 3 horas a la semana (es un cálculo de ejemplo de la propuesta, no una medición de la clínica).</p>
+<p><strong>El objetivo.</strong> Que la agenda avise sola, que el paciente responda con un toque y que recepción se dedique a quien está en la clínica. El sistema no sustituye a recepción: le quita lo repetitivo y deja siempre una salida a una persona.</p>
+<h2 id="como-funciona">Cómo funciona</h2>
+<p>Hay dos flujos. El primero corre una vez al día; el segundo responde cuando el paciente escribe.</p>
+<p><figure><img src="/img/wa-flow-1600.webp" srcset="/img/wa-flow-960.webp 960w, /img/wa-flow-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2800" height="800" alt="Diagrama con dos flujos: recordatorios diarios desde la agenda y respuestas a los mensajes del paciente" loading="lazy" decoding="async"></figure></p>
+<p><strong>Recordatorios.</strong> Cada tarde el sistema busca en la agenda las citas del día siguiente que no tengan recordatorio ni baja, envía una plantilla aprobada por Meta con nombre, fecha, hora y doctor, y anota en la agenda que ya avisó para no repetir el mensaje.</p>
+<p><strong>Respuestas.</strong> El paciente toca Confirmar o Reprogramar, o escribe a la clínica y recibe un menú con tres botones: solicitar cita, horarios y lugar, y recepción. Para solicitar cita elige servicio, día y turno con listas y botones. La solicitud queda en la hoja y recepción la confirma, porque el sistema todavía no aparta horarios por sí solo.</p>
+<p>Así se ve en el chat del paciente, con datos ficticios. El texto de la baja es ilustrativo:</p>
+<p><figure><img src="/img/wa-chats-1600.webp" srcset="/img/wa-chats-960.webp 960w, /img/wa-chats-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1530" alt="Cuatro teléfonos con mensajes de ejemplo: recordatorio y confirmación, reprogramar con lista de fechas, solicitar cita y baja" loading="lazy" decoding="async"></figure></p>
+<p><strong>Privacidad.</strong> El mensaje solo lleva nombre, fecha, hora y doctor, nunca el motivo de la consulta, y la hoja que lee la automatización no tiene columnas de diagnóstico. Solo se escribe a quien dio su consentimiento, y quien escribe BAJA deja de recibir mensajes.</p>
+<h2 id="iteracion-del-contenido-conversacional">Iteración del contenido conversacional</h2>
+<p>Con el sistema funcionando, revisé cada mensaje como lo vive el paciente, de principio a fin. Encontré cuatro problemas que podían causar errores reales y varios de tono y claridad. Los corregí y los probé con mensajes reales a mi propio teléfono.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabla"><table><thead>
+<tr>
+<th>Mensaje</th>
+<th>Antes</th>
+<th>Después</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reprogramar desde el recordatorio</td>
+<td>&quot;Cancelamos tu cita de mañana&quot;</td>
+<td>&quot;Sin problema, Sofía. Ya avisamos a recepción que necesitas cambiar tu cita. ¿Qué día te queda mejor?&quot;, con la lista de fechas</td>
+<td>El texto decía &quot;cancelamos&quot; cuando el paciente pidió reprogramar, y la agenda decía otra cosa</td>
+</tr>
+<tr>
+<td>Seguimiento con historial</td>
+<td>&quot;Tu última cita fue el 16/10/2026&quot;, aunque esa cita era al día siguiente</td>
+<td>Toma la última cita pasada y la muestra con día</td>
+<td>Un dato incorrecto en un mensaje de salud resta confianza en todo el sistema</td>
+</tr>
+<tr>
+<td>Seguimiento sin historial</td>
+<td>No llegaba ningún mensaje</td>
+<td>&quot;No encontramos citas anteriores con este número. ¿Es tu primera vez con nosotros?&quot;, con dos botones</td>
+<td>Un silencio se percibe como falla. Cada camino debe terminar en una respuesta y una salida</td>
+</tr>
+<tr>
+<td>Lista de fechas</td>
+<td>16/10/2026, 17/10/2026…</td>
+<td>Viernes 16 de oct., sin domingos ni días sin consulta</td>
+<td>Las personas piensan en &quot;el viernes&quot;, y ofrecer días sin consulta genera solicitudes imposibles</td>
+</tr>
+<tr>
+<td>Menú principal</td>
+<td>&quot;Escribe 1 para agendar o 2 para hablar con recepción&quot;</td>
+<td>Tres botones: Solicitar cita, Horarios y lugar, Recepción</td>
+<td>Era el único paso donde había que escribir. Se agregó la pregunta más frecuente</td>
+</tr>
+<tr>
+<td>Hablar con recepción</td>
+<td>&quot;En un momento te atiende alguien&quot;</td>
+<td>&quot;Te contactarán por este medio en horario de atención&quot;</td>
+<td>&quot;En un momento&quot; es una promesa que no se cumple de noche</td>
+</tr>
+<tr>
+<td>Nombre del paciente</td>
+<td>El del perfil de WhatsApp</td>
+<td>El de la agenda</td>
+<td>Un familiar puede agendar con su número, y el nombre del perfil puede ser un apodo</td>
+</tr>
+</tbody>
+</table></div><h2 id="revision-de-accesibilidad">Revisión de accesibilidad</h2>
+<p>En una segunda ronda revisé cómo se escucha cada mensaje con un lector de pantalla, cómo lo lee una persona mayor y qué tan claro es sin depender de los emojis.</p>
+<ul>
+<li><strong>Fechas.</strong> En las listas, &quot;Viernes 16 de oct.&quot; en lugar de &quot;Vie 16/10&quot;, que el lector leía como &quot;dieciséis diagonal diez&quot;. En los mensajes, el mes completo, porque ahí no hay límite de caracteres.</li>
+<li><strong>Horas.</strong> Formato de 12 horas (&quot;4:00 p.m.&quot;), que es como la mayoría de las personas en México dice la hora, sobre todo las mayores.</li>
+<li><strong>Confirmaciones.</strong> Con etiquetas y punto final (Día, Hora, Doctor) para que el lector haga pausas.</li>
+<li><strong>Emojis.</strong> Cada uno va junto a una palabra que dice lo mismo. Quité las flechas de emoji de las fechas de Seguimiento, que el lector anunciaba como &quot;botón retroceder&quot;.</li>
+<li><strong>Botones de horario.</strong> Solo &quot;Mañana&quot; y &quot;Tarde&quot;, con los rangos escritos en el mensaje.</li>
+<li><strong>Solicitud de cita.</strong> El mensaje aclara que es una solicitud y todavía no una cita confirmada, para que nadie llegue a una cita que no existe.</li>
+</ul>
+<h2 id="decisiones-de-diseno">Decisiones de diseño</h2>
+<ul>
+<li><strong>Listas y botones en lugar de formularios.</strong> El formulario nativo de WhatsApp (Flows) fue bloqueado por Meta en la cuenta de prueba. Listas y botones dan una experiencia parecida y funcionan en cualquier cuenta.</li>
+<li><strong>Cada respuesta lleva su contexto.</strong> El identificador de cada opción guarda lo que el paciente ya eligió, así el sistema no necesita recordar la conversación ni volver a preguntar.</li>
+<li><strong>Pedir el mínimo de datos.</strong> Teléfono y nombre llegan solos con el mensaje; el resto lo completa recepción al confirmar.</li>
+<li><strong>Siempre una salida a una persona.</strong> Todos los caminos ofrecen hablar con recepción.</li>
+<li><strong>Tuteo.</strong> Evalué cambiar a &quot;usted&quot; para pacientes mayores y mantuve el tuteo como decisión de marca. Cambiarlo implica una plantilla nueva aprobada por Meta, así que queda por confirmar con la clínica.</li>
+</ul>
+<h2 id="propuesta-y-documentacion">Propuesta y documentación</h2>
+<p>Preparé la propuesta de piloto para la clínica y tres documentos para poder repetir el trabajo con otro cliente:</p>
+<ol>
+<li><strong>Requisitos del cliente.</strong> Lista de lo que la clínica debe tener antes de empezar: responsable, cuentas, número, datos del negocio, pago, consentimiento de pacientes y agenda.</li>
+<li><strong>Lista de implementación.</strong> Pasos en orden, en 15 fases, con una tabla de errores conocidos y su solución, que armé con los fallos que me encontré al construirlo.</li>
+<li><strong>Cómo explicárselo al cliente.</strong> Guía sin tecnicismos: qué gana, qué pone y cuánto cuesta cada parte, y qué no conviene prometer, por ejemplo un porcentaje de reducción de ausencias o una fecha de arranque antes de tener aprobaciones de Meta.</li>
+</ol>
+<p>La propuesta separa lo que incluye de lo que se cotiza aparte, y propone un piloto de tres meses en el que la clínica comparte métricas a los 30 y 90 días. Como el piloto todavía no arranca, esas métricas no existen.</p>
+<h2 id="que-no-se-todavia">Qué no sé todavía</h2>
+<ul>
+<li><strong>Si funciona con pacientes reales.</strong> Todo se probó con el número de prueba de Meta. Falta dar de alta un número real y verificar el negocio, y la tarifa por mensaje vigente para México.</li>
+<li><strong>Cuánto reduce las inasistencias.</strong> Por eso el piloto mide primero las inasistencias del último mes y las compara a los 30 y 90 días.</li>
+<li><strong>Qué prefiere la clínica.</strong> Tuteo o usted, y el horario, teléfono y dirección reales, que hoy son de ejemplo.</li>
+<li><strong>Qué pasa con una fecha real de Seguimiento que cae en domingo.</strong> La regla está hecha y falta probarla.</li>
+</ul>
+</div>
+  </div>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="footer-links">
+      <li><a href="mailto:alonso.cantug@gmail.com">alonso.cantug@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/alonso-cantug/" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/alonsocantu" rel="noopener">Behance</a></li>
+    </ul>
+    <p>Los proyectos son de portafolio o propuestas todavía sin resultados medidos. Cada caso indica qué datos son de ejemplo o simulados.</p>
+    <p>© 2026 Alonso Cantú. Monterrey, México.</p>
+  </div>
+</footer>
+</body>
+</html>
