@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhatsApp reminders for a clinic — Case study</title>
-<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a dermatology clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
+<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
 <meta name="color-scheme" content="light dark">
 <link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
 <link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WhatsApp reminders for a clinic — Case study">
-<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a dermatology clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
+<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Pilot proposal, tested with example data.">
 <meta property="og:locale" content="en_US">
 <link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
+<script>var d=document.documentElement;d.classList.add("js");setTimeout(function(){if(!window.__site)d.classList.add("js-failed")},3000)</script>
 <link rel="stylesheet" href="/css/site.css">
 
 </head>
@@ -37,7 +38,7 @@
     <p class="crumbs"><a href="/en/projects/">Projects</a></p>
     <ul class="tags" role="list"><li class="chip">Proposal to a real client</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Pilot not started</li></ul>
     <h1>WhatsApp appointment reminders and booking requests for a clinic</h1>
-    <p class="summary">A system that every evening messages patients who have an appointment the next day on WhatsApp and lets them confirm, reschedule or request an appointment with buttons. I proposed it to a dermatology clinic, built it with Make, Google Sheets and the official WhatsApp platform, and reviewed every message the way the patient experiences it.</p>
+    <p class="summary">A system that every evening messages patients who have an appointment the next day on WhatsApp and lets them confirm, reschedule or request an appointment with buttons. I proposed it to a clinic, built it with Make, Google Sheets and the official WhatsApp platform, and reviewed every message the way the patient experiences it.</p>
     
     <dl class="facts">
       <div><dt>Role</dt><dd>Conversation design, automation build, documentation and commercial proposal</dd></div><div><dt>Tools</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Scope</dt><dd>Daily reminder with buttons, menu, appointment request, rescheduling, follow-up, opt-out and front-desk alert</dd></div><div><dt>Out of scope</dt><dd>Real-time availability scheduling, an AI assistant and medical software integration (quoted separately)</dd></div>
@@ -60,7 +61,7 @@
 <p><strong>Reminders.</strong> Every evening the system looks in the schedule for next-day appointments with no reminder sent and no opt-out, sends a Meta-approved template with name, date, time and doctor, and marks in the schedule that it already sent it so the message is not repeated.</p>
 <p><strong>Replies.</strong> The patient taps Confirm or Reschedule, or writes to the clinic and gets a menu with three buttons: request an appointment, hours and location, and front desk. To request an appointment they pick a service, a day and a time of day with lists and buttons. The request is saved in the sheet and the front desk confirms it, because the system does not reserve slots by itself yet.</p>
 <p>This is how it looks in the patient's chat, with fictional data. The texts were written in Spanish and are translated here, and the opt-out text is illustrative:</p>
-<p><figure><img src="/img/wa-chats-en-1600.webp" srcset="/img/wa-chats-en-960.webp 960w, /img/wa-chats-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1530" alt="Four phones with example messages: reminder and confirmation, rescheduling with a date list, requesting an appointment and opting out" loading="lazy" decoding="async"></figure></p>
+<p><figure><img src="/img/wa-chats-en-1600.webp" srcset="/img/wa-chats-en-960.webp 960w, /img/wa-chats-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1560" alt="Four phones with example messages: reminder and confirmation, rescheduling with a date list, requesting an appointment and opting out" loading="lazy" decoding="async"></figure></p>
 <p><strong>Privacy.</strong> The message only carries name, date, time and doctor, never the reason for the visit, and the sheet the automation reads has no diagnosis columns. It only messages people who gave consent, and anyone who writes BAJA (opt out) stops receiving messages.</p>
 <h2 id="iterating-on-the-conversational-content">Iterating on the conversational content</h2>
 <p>Once the system worked, I reviewed every message the way the patient experiences it, from start to finish. I found four problems that could cause real mistakes and several of tone and clarity. I fixed them and tested them with real messages to my own phone. The messages themselves are in Spanish; I translate them here.</p>
@@ -165,5 +166,6 @@
     <p>© 2026 Alonso Cantú. Monterrey, Mexico.</p>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

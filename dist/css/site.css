@@ -351,3 +351,90 @@ a:hover { color: var(--color-accent-hover); }
 .proto-screen { background: #fff url(proto-poster.webp) center / cover no-repeat; }
 .proto h2 + p { margin-top: var(--space-3); }
 .proto .actions { margin-top: var(--space-5); display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+/* ==========================================================================
+   Dinamismo (mejora progresiva): todo se desactiva con "reducir movimiento"
+   y el contenido sigue visible si el JavaScript no carga.
+   ========================================================================== */
+
+/* Enlaces del menú: el subrayado crece desde la izquierda */
+.nav a:not(.lang) { background: linear-gradient(var(--color-accent), var(--color-accent)) 0 100% / 0 2px no-repeat; transition: background-size var(--dur-2) var(--ease), color var(--dur-1) var(--ease); }
+.nav a:not(.lang):hover { background-size: 100% 2px; border-bottom-color: transparent; }
+.nav a[aria-current="page"]:hover { border-bottom-color: var(--color-ink); }
+
+/* Botones: se levantan al pasar y se hunden al presionar */
+.btn { transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), transform var(--dur-1) var(--ease), box-shadow var(--dur-2) var(--ease); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+
+/* Tarjetas de proyecto: la imagen sube y "Ver caso" se subraya */
+.project .more { background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size var(--dur-2) var(--ease); padding-bottom: 2px; }
+.project:hover .more, .project:focus-within .more { background-size: 100% 2px; }
+.project .shot.bare img { transition: transform var(--dur-2) var(--ease), filter var(--dur-2) var(--ease); }
+.project:hover .shot.bare img { filter: drop-shadow(0 14px 22px rgb(15 23 42 / 0.18)); }
+
+/* Pasos de "Cómo trabajo": el número cobra vida al pasar */
+.steps li::before { transition: transform var(--dur-2) var(--ease); transform-origin: left center; }
+.steps li:hover::before { transform: scale(1.25); }
+
+/* Barra de progreso de lectura en los casos */
+.progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 30; background: var(--color-accent); transform: scaleX(var(--p, 0)); transform-origin: left; pointer-events: none; }
+@media print { .progress { display: none; } }
+
+/* Índice del caso: sección actual resaltada (y fijo en pantallas anchas) */
+.case-nav a { border-bottom: 2px solid transparent; text-decoration: none; color: var(--color-ink-muted); transition: color var(--dur-1) var(--ease), border-color var(--dur-2) var(--ease); }
+.case-nav a:hover { color: var(--color-accent); }
+.case-nav a[aria-current="location"] { color: var(--color-ink); border-bottom-color: var(--color-accent); font-weight: var(--weight-semibold); }
+@media (min-width: 64em) {
+  html { scroll-padding-top: 5rem; }
+  .case-nav { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: var(--space-5); padding-block: var(--space-2); background: color-mix(in srgb, var(--color-bg) 90%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); }
+  .case-nav strong { margin: 0; white-space: nowrap; }
+  .case-nav ol { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .case-nav ol::-webkit-scrollbar { display: none; }
+  .case-nav a { white-space: nowrap; }
+}
+
+/* Imágenes del caso: clic para ampliar */
+.zoom { display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; font: inherit; color: inherit; cursor: zoom-in; border-radius: var(--radius-md); position: relative; }
+.zoom::after { content: attr(data-label); position: absolute; right: var(--space-3); bottom: var(--space-3); background: var(--color-ink); color: var(--color-bg); font-size: var(--text-xs); font-weight: var(--weight-semibold); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); opacity: 0; transform: translateY(4px); transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease); pointer-events: none; }
+.zoom:hover::after, .zoom:focus-visible::after { opacity: 1; transform: none; }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; overflow: auto; }
+.lightbox::backdrop { background: rgb(2 6 23 / 0.86); }
+.lightbox-inner { min-height: 100%; display: grid; place-items: center; padding: var(--space-7) var(--space-4) var(--space-6); }
+.lightbox img { max-width: min(100%, 120rem); width: auto; height: auto; max-height: none; border-radius: var(--radius-md); background: var(--color-surface); box-shadow: 0 24px 64px rgb(0 0 0 / 0.5); cursor: zoom-out; }
+.lightbox-close { position: fixed; top: var(--space-4); right: var(--space-4); min-height: var(--target); min-width: var(--target); border-radius: var(--radius-full); border: 2px solid #fff; background: rgb(15 23 42 / 0.9); color: #fff; font: inherit; font-weight: var(--weight-semibold); padding-inline: var(--space-4); cursor: pointer; }
+.lightbox-close:hover { background: #fff; color: #0F172A; }
+
+/* Solo con movimiento permitido */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+
+  /* Transición suave entre páginas (navegadores que la soportan) */
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: site-header; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 240ms; }
+
+  /* Entrada del hero: una sola secuencia al cargar */
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .hero-grid > div > * { animation: rise 700ms var(--ease) both; }
+  .hero-grid > div > :nth-child(2) { animation-delay: 90ms; }
+  .hero-grid > div > :nth-child(3) { animation-delay: 180ms; }
+  .hero-grid > div > :nth-child(4) { animation-delay: 270ms; }
+  .hero-grid > div > :nth-child(5) { animation-delay: 360ms; }
+  .hero-grid .dim::before, .hero-grid .dim::after { transform-origin: left; animation: draw 900ms var(--ease) 300ms both; }
+  .hero-grid .dim span { animation: fade 500ms var(--ease) 900ms both; }
+  .hero-grid .shot { animation: rise 800ms var(--ease) 450ms both; }
+
+  /* Aparición al hacer scroll (lo marca el script, solo en lo que está bajo el pliegue) */
+  .js:not(.js-failed) .reveal { opacity: 0; transform: translateY(16px); }
+  .js:not(.js-failed) .reveal.in { opacity: 1; transform: none; transition: opacity 600ms var(--ease), transform 600ms var(--ease); transition-delay: var(--d, 0ms); }
+
+  .lightbox[open] .lightbox-inner img { animation: rise 260ms var(--ease) both; }
+  .lightbox[open]::backdrop { animation: fade 200ms var(--ease) both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover { transform: none; }
+  .steps li:hover::before { transform: none; }
+}

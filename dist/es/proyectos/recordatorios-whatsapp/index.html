@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recordatorios por WhatsApp para una clínica — Caso de estudio</title>
-<meta name="description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica dermatológica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta name="description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
 <meta name="color-scheme" content="light dark">
 <link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
 <link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Recordatorios por WhatsApp para una clínica — Caso de estudio">
-<meta property="og:description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica dermatológica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
+<meta property="og:description" content="Sistema de recordatorios y solicitud de citas por WhatsApp para una clínica, con revisión del contenido conversacional y de accesibilidad. Propuesta de piloto, probado con datos de ejemplo.">
 <meta property="og:locale" content="es_MX">
 <link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
+<script>var d=document.documentElement;d.classList.add("js");setTimeout(function(){if(!window.__site)d.classList.add("js-failed")},3000)</script>
 <link rel="stylesheet" href="/css/site.css">
 
 </head>
@@ -37,7 +38,7 @@
     <p class="crumbs"><a href="/es/proyectos/">Proyectos</a></p>
     <ul class="tags" role="list"><li class="chip">Propuesta a cliente real</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Piloto sin arrancar</li></ul>
     <h1>Recordatorios y solicitud de citas por WhatsApp para una clínica</h1>
-    <p class="summary">Un sistema que cada tarde avisa por WhatsApp a quien tiene cita al día siguiente y deja que el paciente confirme, reprograme o pida cita con botones. Lo propuse a una clínica dermatológica, lo construí con Make, Google Sheets y la plataforma oficial de WhatsApp, y revisé cada mensaje como lo vive el paciente.</p>
+    <p class="summary">Un sistema que cada tarde avisa por WhatsApp a quien tiene cita al día siguiente y deja que el paciente confirme, reprograme o pida cita con botones. Lo propuse a una clínica, lo construí con Make, Google Sheets y la plataforma oficial de WhatsApp, y revisé cada mensaje como lo vive el paciente.</p>
     
     <dl class="facts">
       <div><dt>Rol</dt><dd>Diseño de la conversación, construcción de la automatización, documentación y propuesta comercial</dd></div><div><dt>Herramientas</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Alcance</dt><dd>Recordatorio diario con botones, menú, solicitud de cita, reprogramación, seguimiento, baja y aviso a recepción</dd></div><div><dt>Fuera de alcance</dt><dd>Agenda con disponibilidad en tiempo real, asistente con IA e integración con software médico (se cotizan aparte)</dd></div>
@@ -60,7 +61,7 @@
 <p><strong>Recordatorios.</strong> Cada tarde el sistema busca en la agenda las citas del día siguiente que no tengan recordatorio ni baja, envía una plantilla aprobada por Meta con nombre, fecha, hora y doctor, y anota en la agenda que ya avisó para no repetir el mensaje.</p>
 <p><strong>Respuestas.</strong> El paciente toca Confirmar o Reprogramar, o escribe a la clínica y recibe un menú con tres botones: solicitar cita, horarios y lugar, y recepción. Para solicitar cita elige servicio, día y turno con listas y botones. La solicitud queda en la hoja y recepción la confirma, porque el sistema todavía no aparta horarios por sí solo.</p>
 <p>Así se ve en el chat del paciente, con datos ficticios. El texto de la baja es ilustrativo:</p>
-<p><figure><img src="/img/wa-chats-1600.webp" srcset="/img/wa-chats-960.webp 960w, /img/wa-chats-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1530" alt="Cuatro teléfonos con mensajes de ejemplo: recordatorio y confirmación, reprogramar con lista de fechas, solicitar cita y baja" loading="lazy" decoding="async"></figure></p>
+<p><figure><img src="/img/wa-chats-1600.webp" srcset="/img/wa-chats-960.webp 960w, /img/wa-chats-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1560" alt="Cuatro teléfonos con mensajes de ejemplo: recordatorio y confirmación, reprogramar con lista de fechas, solicitar cita y baja" loading="lazy" decoding="async"></figure></p>
 <p><strong>Privacidad.</strong> El mensaje solo lleva nombre, fecha, hora y doctor, nunca el motivo de la consulta, y la hoja que lee la automatización no tiene columnas de diagnóstico. Solo se escribe a quien dio su consentimiento, y quien escribe BAJA deja de recibir mensajes.</p>
 <h2 id="iteracion-del-contenido-conversacional">Iteración del contenido conversacional</h2>
 <p>Con el sistema funcionando, revisé cada mensaje como lo vive el paciente, de principio a fin. Encontré cuatro problemas que podían causar errores reales y varios de tono y claridad. Los corregí y los probé con mensajes reales a mi propio teléfono.</p>
@@ -165,5 +166,6 @@
     <p>© 2026 Alonso Cantú. Monterrey, México.</p>
   </div>
 </footer>
+<script src="/js/site.js" defer></script>
 </body>
 </html>
