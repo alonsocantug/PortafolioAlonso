@@ -4,15 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhatsApp reminders for a clinic — Case study</title>
-<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Working prototype under test in a real environment, metrics pending.">
+<meta name="description" content="Appointment reminders and booking requests over WhatsApp for a clinic: I redesigned the conversational content and accessibility. Prototype under test.">
 <meta name="color-scheme" content="light dark">
 <link rel="alternate" hreflang="en" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
 <link rel="alternate" hreflang="es" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <link rel="alternate" hreflang="x-default" href="https://portafolioalonso.vercel.app/es/proyectos/recordatorios-whatsapp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WhatsApp reminders for a clinic — Case study">
-<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a clinic, with a review of the conversational content and accessibility. Working prototype under test in a real environment, metrics pending.">
+<meta property="og:description" content="Appointment reminders and booking requests over WhatsApp for a clinic: I redesigned the conversational content and accessibility. Prototype under test.">
 <meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
+<meta property="og:url" content="https://portafolioalonso.vercel.app/en/projects/whatsapp-reminders/">
+<meta property="og:image" content="https://portafolioalonso.vercel.app/img/og-wa-card-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two phones with example chats: an appointment reminder with Confirm and Reschedule buttons, and a menu with three buttons: Request appointment, Hours and location, Front desk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhatsApp reminders for a clinic — Case study">
+<meta name="twitter:description" content="Appointment reminders and booking requests over WhatsApp for a clinic: I redesigned the conversational content and accessibility. Prototype under test.">
+<meta name="twitter:image" content="https://portafolioalonso.vercel.app/img/og-wa-card-en.jpg">
+
 <link rel="preload" href="/fonts/inter-var.woff" as="font" type="font/woff" crossorigin>
 <script>var d=document.documentElement;d.classList.add("js");setTimeout(function(){if(!window.__site)d.classList.add("js-failed")},3000)</script>
 <link rel="stylesheet" href="/css/site.css">
@@ -36,35 +47,45 @@
 <article class="wrap">
   <header class="page-head">
     <p class="crumbs"><a href="/en/projects/">Projects</a></p>
-    <ul class="tags" role="list"><li class="chip">Proposal to a real client</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Pilot in testing</li></ul>
+    <ul class="tags" role="list"><li class="chip">Real client</li><li class="chip chip-plain">Individual</li><li class="chip chip-plain">Pilot in progress</li></ul>
     <h1>WhatsApp appointment reminders and booking requests for a clinic</h1>
-    <p class="summary">A system that every evening messages patients who have an appointment the next day on WhatsApp and lets them confirm, reschedule or request an appointment with buttons. I proposed it to a clinic, built it with Make, Google Sheets and the official WhatsApp platform, and reviewed every message the way the patient experiences it.</p>
+    <p class="summary">A system that every evening messages patients who have an appointment the next day on WhatsApp and lets them confirm, reschedule or request an appointment with buttons.</p>
     
+    <ul class="plain-list" role="list" style="max-width:var(--measure)">
+      <li><strong>Problem.</strong> When a patient forgets an appointment, the clinic loses that slot and the front desk spends time confirming one by one.</li><li><strong>What I did.</strong> I designed and built appointment reminders and booking requests over WhatsApp with Make and Google Sheets, and proposed them to a clinic.</li><li><strong>What I found.</strong> I reviewed every message and found 4 errors that would have reached the patient.</li>
+    </ul>
+    <p class="note"><strong>Status.</strong> Tested with Meta&#39;s test number and my phone. Pilot with the clinic: in progress. There are no metrics yet, the data in the images is fictional, and I do not publish the clinic&#39;s name or prices.</p>
     <dl class="facts">
       <div><dt>Role</dt><dd>Conversation design, automation build, documentation and commercial proposal</dd></div><div><dt>Tools</dt><dd>WhatsApp Business Platform (Meta), Make, Google Sheets</dd></div><div><dt>Scope</dt><dd>Daily reminder with buttons, menu, appointment request, rescheduling, follow-up, opt-out and front-desk alert</dd></div><div><dt>Out of scope</dt><dd>Real-time availability scheduling, an AI assistant and medical software integration (quoted separately)</dd></div>
     </dl>
-    <p class="note"><strong>Note on status.</strong> I built and tested it with Meta&#39;s test number, an example schedule and my own phone. It is now under test in a real environment and there are no metrics yet, so I do not claim any reduction in no-shows. The names, phone numbers and appointments in the images are fictional. I do not publish the clinic&#39;s name or prices.</p>
+    
   </header>
-  <figure class="case-hero"><div class="shot bare"><img src="/img/wa-card-en-1600.webp" srcset="/img/wa-card-en-960.webp 960w, /img/wa-card-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2400" height="1600" alt="Two phones with example messages: a reminder with Confirm and Reschedule buttons, and a menu with three buttons" fetchpriority="high"></div></figure>
+  <figure class="case-hero"><div class="shot bare"><img src="/img/wa-card-en-1600.webp" srcset="/img/wa-card-en-960.webp 960w, /img/wa-card-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2400" height="1600" alt="Two phones with example chats: an appointment reminder with Confirm and Reschedule buttons, and a menu with three buttons: Request appointment, Hours and location, Front desk" fetchpriority="high"></div></figure>
   
   <div class="case">
     <nav class="case-nav" aria-label="On this page">
       <strong>On this page</strong>
-      <ol><li><a href="#problem-and-goal">Problem and goal</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#iterating-on-the-conversational-content">Iterating on the conversational content</a></li><li><a href="#accessibility-review">Accessibility review</a></li><li><a href="#design-decisions">Design decisions</a></li><li><a href="#proposal-and-documentation">Proposal and documentation</a></li><li><a href="#current-status">Current status</a></li></ol>
+      <ol><li><a href="#problem-and-goal">Problem and goal</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#iterating-on-the-conversational-content">Iterating on the conversational content</a></li><li><a href="#accessibility-review">Accessibility review</a></li><li><a href="#design-decisions">Design decisions</a></li><li><a href="#proposal-and-documentation">Proposal and documentation</a></li><li><a href="#what-i-will-measure-in-the-pilot">What I will measure in the pilot</a></li><li><a href="#what-i-learned">What I learned</a></li></ol>
     </nav>
     <div class="prose"><h2 id="problem-and-goal">Problem and goal</h2>
 <p><strong>The problem.</strong> When a patient forgets an appointment, the clinic loses that slot and its revenue. The front desk also spends time every day calling or messaging people one by one to confirm. With 20 appointments a day and 2 minutes per confirmation, that is about 40 minutes a day, close to 3 hours a week (an example calculation from the proposal, not a measurement from the clinic).</p>
 <p><strong>The goal.</strong> The schedule alerts patients on its own, they reply with one tap, and the front desk can focus on the people in the clinic. The system does not replace the front desk: it removes the repetitive work and always leaves a way to reach a person.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>There are two flows. The first runs once a day; the second answers when the patient writes.</p>
-<p><figure><img src="/img/wa-flow-1600.webp" srcset="/img/wa-flow-960.webp 960w, /img/wa-flow-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2800" height="800" alt="Diagram with two flows: daily reminders from the schedule and replies to patient messages" loading="lazy" decoding="async"></figure></p>
-<p><strong>Reminders.</strong> Every evening the system looks in the schedule for next-day appointments with no reminder sent and no opt-out, sends a Meta-approved template with name, date, time and doctor, and marks in the schedule that it already sent it so the message is not repeated.</p>
+<p><figure><img src="/img/wa-flow-en-1600.webp" srcset="/img/wa-flow-en-960.webp 960w, /img/wa-flow-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2800" height="800" alt="Diagram of two flows. Daily flow: the schedule in Google Sheets, Make finds tomorrow&#x27;s appointments with no reminder or opt-out, a Meta-approved template message is sent, the patient taps Confirm or Reschedule and the schedule is updated. Reply flow: the patient writes, a filter lets only real messages through, a route chooses between menu, request an appointment, hours, confirm, reschedule, follow-up, opt-out or front desk, and the request is saved in the sheet for the front desk to confirm" loading="lazy" decoding="async"></figure></p>
+<p><strong>Reminders.</strong> Every evening the system looks in the schedule for next-day appointments with no reminder sent and no opt-out, sends a Meta-approved template (a text Meta reviews before a business can use it to message someone first) with name, date, time and doctor, and marks in the schedule that it already sent it so the message is not repeated.</p>
 <p><strong>Replies.</strong> The patient taps Confirm or Reschedule, or writes to the clinic and gets a menu with three buttons: request an appointment, hours and location, and front desk. To request an appointment they pick a service, a day and a time of day with lists and buttons. The request is saved in the sheet and the front desk confirms it, because the system does not reserve slots by itself yet.</p>
 <p>This is how it looks in the patient's chat, with fictional data. The texts were written in Spanish and are translated here, and the opt-out text is illustrative:</p>
-<p><figure><img src="/img/wa-chats-en-1600.webp" srcset="/img/wa-chats-en-960.webp 960w, /img/wa-chats-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1560" alt="Four phones with example messages: reminder and confirmation, rescheduling with a date list, requesting an appointment and opting out" loading="lazy" decoding="async"></figure></p>
-<p><strong>Privacy.</strong> The message only carries name, date, time and doctor, never the reason for the visit, and the sheet the automation reads has no diagnosis columns. It only messages people who gave consent, and anyone who writes BAJA (opt out) stops receiving messages.</p>
+<p><figure><img src="/img/wa-chats-en-1600.webp" srcset="/img/wa-chats-en-960.webp 960w, /img/wa-chats-en-1600.webp 1600w" sizes="(min-width: 70rem) 1120px, 100vw" width="2640" height="1560" alt="Four phones with example chats. 1: reminder with Confirm and Reschedule buttons and the appointment confirmation. 2: date list for rescheduling. 3: appointment request with service, day and time of day. 4: reply for someone with no history, front-desk alert and opt-out" loading="lazy" decoding="async"></figure></p>
+<p>Transcript of three messages from the example, translated from Spanish:</p>
+<blockquote>
+<p><strong>Reminder.</strong> &quot;Hi, Ana. A reminder of your appointment at [Clinic] tomorrow, Saturday, October 17, at 4:00 p.m. with Dr. Luis Elizondo. Can you confirm you will attend?&quot; Buttons: Confirm and Reschedule.</p>
+<p><strong>Reschedule.</strong> &quot;No problem, Sofía. We let the front desk know you need to change your appointment. Which day suits you better?&quot; Button: See dates.</p>
+<p><strong>No history.</strong> &quot;We found no previous appointments with this number. Is this your first visit?&quot; Buttons: Yes, first visit and I am already a patient.</p>
+</blockquote>
+<p><strong>Privacy.</strong> The message only carries name, date, time and doctor, never the reason for the visit, and the sheet the automation reads has no diagnosis columns. It only messages people who gave consent, and anyone who writes BAJA (opt out) stops receiving messages. Because this is health data in Mexico, the clinic must have a privacy notice and the patients' consent. This does not claim legal compliance: it is what has to exist before starting.</p>
 <h2 id="iterating-on-the-conversational-content">Iterating on the conversational content</h2>
-<p>Once the system worked, I reviewed every message the way the patient experiences it, from start to finish. I found four problems that could cause real mistakes and several of tone and clarity. I fixed them and tested them with real messages to my own phone. The messages themselves are in Spanish; I translate them here.</p>
+<p>Once the system worked, I reviewed every message by putting myself in the patient's place, from start to finish. It was my own heuristic review, with no testing with patients. I found four problems that could cause real mistakes and several of tone and clarity. I fixed them and tested them with real messages to my own phone. The messages themselves are in Spanish; I translate them here.</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="Table"><table><thead>
 <tr>
 <th>Message</th>
@@ -77,44 +98,44 @@
 <tr>
 <td>Reschedule from the reminder</td>
 <td>&quot;We cancelled your appointment tomorrow&quot;</td>
-<td>&quot;No problem, Sofía. We let the front desk know you need to change your appointment. Which day suits you better?&quot;, with the date list</td>
-<td>The text said &quot;cancelled&quot; when the patient asked to reschedule, and the schedule said something else</td>
+<td>&quot;No problem, Sofía. We let the front desk know you need to change your appointment. Which day suits you better?&quot;</td>
+<td>The text said &quot;cancelled&quot; when the patient asked to reschedule, and the schedule said something else. Now the date list arrives in the same message</td>
 </tr>
 <tr>
 <td>Follow-up with history</td>
 <td>&quot;Your last appointment was 10/16/2026&quot;, although that appointment was the next day</td>
-<td>Takes the most recent past appointment and shows it with the weekday</td>
-<td>A wrong fact in a health message erodes trust in the whole system</td>
+<td>&quot;Wed, Oct. 14&quot;</td>
+<td>It takes the most recent past appointment and shows it with its weekday. A wrong fact in a health message erodes trust in the whole system</td>
 </tr>
 <tr>
 <td>Follow-up without history</td>
 <td>No message was sent</td>
-<td>&quot;We found no previous appointments with this number. Is this your first visit?&quot;, with two buttons</td>
+<td>&quot;We found no previous appointments with this number. Is this your first visit?&quot; Buttons: &quot;Yes, first visit&quot; and &quot;I am already a patient&quot;</td>
 <td>Silence reads as a failure. Every path must end in a reply and a way out</td>
 </tr>
 <tr>
 <td>Date list</td>
 <td>16/10/2026, 17/10/2026…</td>
-<td>Friday, Oct. 16, with no Sundays or days without consultations</td>
-<td>People think &quot;on Friday&quot;, and offering closed days creates impossible requests</td>
+<td>&quot;Friday, Oct. 16&quot;</td>
+<td>People think &quot;on Friday&quot;, not in numeric dates. The list leaves out Sundays and days without consultations, because offering closed days creates impossible requests</td>
 </tr>
 <tr>
 <td>Main menu</td>
 <td>&quot;Type 1 to book or 2 to talk to the front desk&quot;</td>
-<td>Three buttons: Request appointment, Hours and location, Front desk</td>
+<td>Buttons: &quot;Request appointment&quot;, &quot;Hours and location&quot; and &quot;Front desk&quot;</td>
 <td>It was the only step that required typing. I added the most frequent question</td>
 </tr>
 <tr>
 <td>Talk to the front desk</td>
 <td>&quot;Someone from the front desk will be with you in a moment&quot;</td>
-<td>&quot;They will contact you here during opening hours&quot;</td>
+<td>&quot;We let the front desk know. They will contact you here during opening hours.&quot;</td>
 <td>&quot;In a moment&quot; is a promise that is not kept at night</td>
 </tr>
 <tr>
 <td>Patient name</td>
 <td>The WhatsApp profile name</td>
-<td>The name in the schedule</td>
-<td>A relative can book from their number, and a profile name can be a nickname</td>
+<td>&quot;Hi, Sofía.&quot;</td>
+<td>The name comes from the schedule, not the profile. A relative can book from their number, and a profile name can be a nickname</td>
 </tr>
 </tbody>
 </table></div><h2 id="accessibility-review">Accessibility review</h2>
@@ -129,11 +150,11 @@
 </ul>
 <h2 id="design-decisions">Design decisions</h2>
 <ul>
-<li><strong>Lists and buttons instead of forms.</strong> WhatsApp's native form (Flows) was blocked by Meta on the test account. Lists and buttons give a similar experience and work on any account.</li>
-<li><strong>Every reply carries its context.</strong> Each option's identifier stores what the patient already chose, so the system does not need to remember the conversation or ask again.</li>
+<li><strong>Lists and buttons instead of forms.</strong> WhatsApp's native form (Flows, a form that opens inside the chat) was blocked by Meta on the test account. Lists and buttons give a similar experience and work on any account.</li>
+<li><strong>Every reply carries its context.</strong> Each option's identifier (an internal code that travels with every button or list item) stores what the patient already chose, so the system does not need to remember the conversation or ask again.</li>
 <li><strong>Ask for the minimum.</strong> Phone and name arrive with the message; the front desk fills in the rest when confirming.</li>
 <li><strong>Always a way to a person.</strong> Every path offers talking to the front desk.</li>
-<li><strong>Informal &quot;you&quot; (tuteo).</strong> I considered switching to the formal register for older patients and kept the informal one as a brand decision. Changing it means a new template approved by Meta, so it is pending confirmation with the clinic.</li>
+<li><strong>Informal or formal &quot;you&quot;.</strong> I considered switching to the formal register for older patients. Decision pending with the clinic: informal or formal. Changing it means a new template approved by Meta.</li>
 </ul>
 <h2 id="proposal-and-documentation">Proposal and documentation</h2>
 <p>I prepared the pilot proposal for the clinic and three documents so the work can be repeated with another client:</p>
@@ -142,9 +163,21 @@
 <li><strong>Implementation checklist.</strong> Ordered steps in 15 phases, with a table of known errors and their fixes, built from the failures I ran into while building it.</li>
 <li><strong>How to explain it to the client.</strong> A plain-language guide: what they gain, what they provide and what each part costs, and what not to promise, such as a percentage reduction in no-shows or a start date before Meta's approvals.</li>
 </ol>
-<p>The proposal separates what is included from what is quoted separately, and proposes a three-month pilot in which the clinic shares metrics at 30 and 90 days. Since the pilot is only just under test, those metrics do not exist yet.</p>
-<h2 id="current-status">Current status</h2>
-<p>The prototype works and is being tested in a real environment. That test will measure how much it reduces no-shows and what the clinic prefers.</p>
+<p>The proposal separates what is included from what is quoted separately and sets out a three-month pilot in which the clinic shares metrics at 30 and 90 days.</p>
+<h2 id="what-i-will-measure-in-the-pilot">What I will measure in the pilot</h2>
+<p>These metrics will be measured at 30 and 90 days into the pilot. There is no data for any of them yet.</p>
+<ul>
+<li><strong>Confirmation rate.</strong> How many patients answer Confirm or Reschedule to the reminder.</li>
+<li><strong>No-shows.</strong> Compared with the last month before the pilot.</li>
+<li><strong>Front-desk minutes saved.</strong> The proposal's 40 minutes a day is an example, not a measurement; the pilot will replace it with real time.</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li><strong>Reviewing with the system running.</strong> Reviewing every message end to end turned up real errors: a &quot;cancelled&quot; when the patient asked to reschedule, dates without a weekday, a future date shown as past, and an empty reply for someone with no history.</li>
+<li><strong>Every path needs a reply and a way out.</strong> Silence reads as a failure, so every path ends in a message and the option to talk to the front desk.</li>
+<li><strong>Depending on Meta limits the options.</strong> The native form (Flows) was not available on the test account, so I used lists and buttons, which work on any account.</li>
+<li><strong>The tone is still open.</strong> Informal or formal &quot;you&quot; is pending with the clinic, and changing it means a new template approved by Meta.</li>
+</ul>
 </div>
   </div>
 </article>

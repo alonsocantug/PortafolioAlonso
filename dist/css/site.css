@@ -438,3 +438,7 @@ a:hover { color: var(--color-accent-hover); }
   .btn:hover { transform: none; }
   .steps li:hover::before { transform: none; }
 }
+
+/* Transcripción de mensajes (cita) */
+.prose blockquote { margin: 0; padding: var(--space-2) var(--space-5); border-left: 3px solid var(--color-accent-bright); max-width: var(--measure); color: var(--color-ink); }
+.prose blockquote p + p { margin-top: var(--space-3); }
